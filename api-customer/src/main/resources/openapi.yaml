@@ -1,0 +1,421 @@
+openapi: 3.0.3
+info:
+  title: Customer Service
+  description: |
+    **Microservicio para Gestión de Clientes y Personas**
+
+    <sup>(EN)</sup> This API handles customer management inherited from the Person class.
+    <sup>(ES)</sup> Esta API maneja la gestión de clientes heredada de la clase Persona.
+
+    **Arquitectura:**
+    - Spring Boot + WebFlux
+    - Arquitectura Hexagonal
+
+    ---
+    **Junior Level**
+  contact:
+    name: Brigeth Toapanta Andache
+    email: margelybrigeth2001@gmail.com
+  version: 1.0.2
+
+servers:
+  - url: http://localhost:8080/api/customer-service
+    description: Development Environment
+
+tags:
+  - name: Customers
+    description: Customer CRUD.
+
+paths:
+  /customers:
+    get:
+      tags:
+        - Customers
+      summary: ⁽ᴱᴺ⁾ Get all the customers. ⁽ᴱˢ⁾ Obtener todos los clientes
+      description: |
+        ### Details:
+          Returns a list of clients with their data.
+        ###
+      operationId: getAllCustomer
+      responses:
+        '200':
+          description: Listado de clientes recuperado exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomerResponse'
+              examples:
+                SuccessfulResponse:
+                  $ref: '#/components/examples/CustomerResponseExample'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    post:
+      tags:
+        - Customers
+      summary: ⁽ᴱᴺ⁾ Crea un nuevo cliente. ⁽ᴱˢ⁾ Create a new client.
+      description: |
+        ### Details:
+          Create a new client in the system with their data.
+          Validaciones:
+          - Identificación única
+        ###
+      operationId: createCustomers
+      requestBody:
+        required: true
+        description: Datos del cliente a crear
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCustomerRequest'
+
+      responses:
+        '201':
+          description: Cliente creado exitosamente.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+              examples:
+                SuccessfulResponse:
+                  $ref: 'CustomerResponseExample'
+        '400':
+          description: Datos de entrada inválidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '409':
+          description: El cliente ya existe (identificación duplicada)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /customers/{customerId}:
+    get:
+      tags:
+        - Customers
+      summary: ⁽ᴱᴺ⁾ Get customer by ID. ⁽ᴱˢ⁾ Obtener cliente por ID único
+      description: |
+        ### Details:
+          Returns a client with their data.
+        ###
+      operationId: getCustomerById
+      parameters:
+        - $ref: '#/components/parameters/CustomerIdParam'
+      responses:
+        '200':
+          description: Cliente encontrado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+              examples:
+                SuccessfulResponse:
+                  $ref: '#/components/examples/CustomerResponseExample'
+        '400':
+          description: Formato de ID inválido
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Cliente no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    put:
+      tags:
+        - Customers
+      summary: ⁽ᴱᴺ⁾ Update an existing client. ⁽ᴱˢ⁾Actualiza un cliente existen
+      description: |
+        ### Details:
+          Update all the data of an existing customer
+        ###
+      operationId: updateCustomer
+      parameters:
+        - $ref: '#/components/parameters/CustomerIdParam'
+
+      requestBody:
+        required: true
+        description: Datos actualizados del cliente
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomerRequest'
+            examples:
+              UpdateCustomer:
+                $ref: '#/components/examples/UpdateCustomerExample'
+      responses:
+        '200':
+          description: Cliente actualizado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '400':
+          description: Datos de entrada inválidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Cliente no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '409':
+          description: Identificación ya registrada por otro cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    delete:
+      tags:
+        - Customers
+      summary: ⁽ᴱᴺ⁾ Removes a customer. ⁽ᴱˢ⁾Elimina un cliente
+      description: |
+        ### Details:
+          Delete an existing customer
+        ###
+      operationId: deleteCustomer
+      parameters:
+        - $ref: '#/components/parameters/CustomerIdParam'
+
+      responses:
+        '204':
+          description: Cliente eliminado exitosamente
+        '400':
+          description: Formato de ID inválido
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404': 
+          description: Cliente no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '409':
+          description: No se puede eliminar el cliente por dependencias activas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+
+components:
+  parameters:
+
+    CustomerIdParam:
+      name: customerId
+      in: path
+      description: Identificador único del cliente (UUID)
+      required: true
+      schema:
+        $ref: '#/components/schemas/UUID'
+
+  schemas:
+
+    UUID:
+      type: string
+      format: uuid
+      pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+      minLength: 36
+      maxLength: 36
+      example: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+
+    CustomerResponse:
+      type: object
+      properties:
+        customerId:
+          $ref: '#/components/schemas/UUID'
+        name:
+          type: string
+          example: "Brigeth Toapanta"
+        gender:
+          type: string
+          enum: [M, F, O]
+          example: "F"
+        identification:
+          type: string
+          example: "1752244267"
+        address:
+          type: string
+          example: "Quito, Calderon"
+        phone:
+          type: string
+          example: "0987448362"
+
+    CreateCustomerRequest:
+      type: object
+      required:
+        - name
+        - gender
+        - identification
+        - address
+        - phone
+        - password
+      properties:
+        name:
+          type: string
+          description: Nombre completo del cliente
+          minLength: 5
+          maxLength: 100
+          pattern: '^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$'
+          example: "Marjorie Toapanta"
+        gender:
+          type: string
+          description: Género del cliente
+          enum: [M, F, O]
+          example: "F"
+        identification:
+          type: string
+          description: Número de identificación (cédula)
+          pattern: '^\d{10}$'
+          minLength: 10
+          maxLength: 10
+          example: "1752244756"
+        address:
+          type: string
+          description: Dirección de residencia
+          minLength: 5
+          maxLength: 150
+          example: "El calzado, Av Teniente Hugo Ortiz"
+        phone:
+          type: string
+          description: Número de teléfono
+          pattern: '^\d{10}$'
+          example: "0995224421"
+        password:
+          type: string
+          description: |
+            Requisitos de Contraseña:
+            - Mínimo 8 caracteres
+            - Al menos un número
+            - Al menos una mayúscula
+            - Al menos una minúscula
+          format: password
+          minLength: 8
+          maxLength: 20
+          pattern: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$'
+          example: "Protegido123"
+
+    UpdateCustomerRequest:
+      type: object
+      required:
+        - name
+        - gender
+        - identification
+        - address
+        - phone
+      properties:
+        name:
+          type: string
+          minLength: 3
+          maxLength: 100
+          pattern: '^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$'
+          example: "Sebastian Morales"
+        gender:
+          type: string
+          enum: [M, F, O]
+          example: "M"
+        identification:
+          type: string
+          description: Número de identificación (cédula)
+          pattern: '^\d{10}$'
+          minLength: 10
+          maxLength: 10
+          example: "1752249999"
+        address:
+          type: string
+          minLength: 5
+          maxLength: 200
+          example: "Nueva dirección 123"
+        phone:
+          type: string
+          pattern: '^\d{10}$'
+          example: "0963739403"
+
+    ErrorResponse:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          example: "2025-01-10T15:30:45Z"
+        status:
+          type: integer
+          example: 404
+        error:
+          type: string
+          example: "NOT_FOUND"
+        message:
+          type: string
+          example: "Cliente no encontrado"
+        path:
+          type: string
+          example: "/customers/f47ac10b-58cc-4372-a567-0e02b2c3d479"
+
+  examples:
+    CustomerResponseExample:
+      value:
+        - customerId: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+          name: "Brigeth Toapanta"
+          gender: "F"
+          identification: "1752244267"
+          address: "Quito, Calderon"
+          phone: "0987448362"
+
+        - customerId: "a12bc34d-56ef-7890-g123-4h56i7j8k9l0"
+          name: "Juan Perez"
+          gender: "M"
+          identification: "1712345678"
+          address: "Quito, Centro"
+          phone: "0999999999"
+
+    UpdateCustomerExample:
+      value:
+        name: "Jose Rivera"
+        gender: "M"
+        identification: "1752374667"
+        address: "San Juan de Calderón"
+        phone: "0983539435"
+
+

@@ -1,0 +1,80 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.0'
+    id 'io.spring.dependency-management' version '1.1.6'
+    id 'org.openapi.generator' version '7.10.0'
+}
+def packageName = "com.btoapanta.account.service"
+
+springBoot {
+    mainClass = "${packageName}.AccountServiceApplication"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    //OPENAPI
+    implementation 'org.openapitools:jackson-databind-nullable:0.2.6'
+    implementation 'io.swagger.core.v3:swagger-annotations:2.2.25'
+    implementation 'org.springdoc:springdoc-openapi-starter-webflux-ui:2.7.0'
+    //lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'org.postgresql:postgresql'
+    //Mapper
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+    annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+    //Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+}
+
+openApiGenerate {
+    generatorName = "spring"
+    inputSpec = "$rootDir/src/main/resources/openapi.yaml".toString()
+    outputDir = "$buildDir/generated".toString()
+    apiPackage = "${packageName}.infrastructure.input.adapter.rest.account.service.api"
+    modelPackage = "${packageName}.infrastructure.input.adapter.rest.account.service.models"
+    library = "spring-boot"
+    configOptions = [
+            skipDefaultInterface                    : "true",
+            useSpringBoot3                          : "true",
+            useJakartaEe                            : "true",
+            serializableModel                       : "true",
+            dateLibrary                             : "java8",
+            openApiNullable                         : "false",
+            reactive                                : "true",
+            apiFirst                                : "false",
+            delegatePattern                         : "false",
+            configPackage                           : "${packageName}.infrastructure.input.adapter.config",
+            sourceFolder                            : "src/main/java",
+            basePackage                             : "${packageName}",
+            disallowAdditionalPropertiesIfNotPresent: "true",
+            interfaceOnly                           : "true"
+    ]
+}
+
+// Add generated sources to main sourceSet
+sourceSets {
+    main {
+        java {
+            srcDir "$buildDir/generated/src/main/java"
+        }
+    }
+}
+
+// Make compileJava depend on openApiGenerate
+compileJava.dependsOn tasks.named('openApiGenerate')
+

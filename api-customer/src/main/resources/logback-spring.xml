@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    
+    <!-- Carpeta donde se guardan los logs -->
+    <property name="LOG_PATH" value="logs"/>
+    
+    <!-- Formato simple de los logs -->
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"/>
+    
+    
+    <!-- ============================================ -->
+    <!-- CONSOLA: Muestra logs en la terminal         -->
+    <!-- ============================================ -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    
+    
+    <!-- ============================================ -->
+    <!-- ARCHIVO: Guarda logs en archivo .txt         -->
+    <!-- - Se renueva cada 24 horas                   -->
+    <!-- - Se borran archivos mayores a 7 días        -->
+    <!-- ============================================ -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- Archivo actual -->
+        <file>${LOG_PATH}/api-customer.txt</file>
+        
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+        
+        <!-- Política de rotación: cada 24 horas -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Nombre de archivos antiguos: api-customer.2025-12-24.txt -->
+            <fileNamePattern>${LOG_PATH}/api-customer.%d{yyyy-MM-dd}.txt</fileNamePattern>
+            
+            <!-- Borrar archivos mayores a 7 días -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+    </appender>
+    
+    
+    <!-- ============================================ -->
+    <!-- Configuración de niveles de log             -->
+    <!-- ============================================ -->
+    
+    <!-- Tu código: nivel INFO -->
+    <logger name="com.brigeth" level="INFO"/>
+    
+    <!-- Spring: solo lo importante -->
+    <logger name="org.springframework" level="WARN"/>
+    
+    <!-- Hibernate SQL: oculto (cambia a DEBUG si quieres ver queries) -->
+    <logger name="org.hibernate.SQL" level="WARN"/>
+    
+    
+    <!-- ============================================ -->
+    <!-- ROOT: Configuración por defecto              -->
+    <!-- ============================================ -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+    
+</configuration>
