@@ -18,7 +18,7 @@ class PersonTest {
     @Test
     @DisplayName("Debe crear una persona válida")
     void shouldCreateValidPerson() {
-        // Given & When
+
         Person person = Person.builder()
                 .personId(UUID.randomUUID())
                 .name("Juan Perez Lopez")
@@ -28,7 +28,6 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // Then
         assertNotNull(person);
         assertEquals("Juan Perez Lopez", person.getName());
         assertEquals(GenderType.M, person.getGender());
@@ -37,7 +36,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe normalizar el nombre correctamente")
     void shouldNormalizeNameCorrectly() {
-        // Given
         Person person = Person.builder()
                 .name("  juan   perez   lopez  ")
                 .gender(GenderType.M)
@@ -56,7 +54,7 @@ class PersonTest {
     @Test
     @DisplayName("Debe normalizar la identificación correctamente")
     void shouldNormalizeIdentificationCorrectly() {
-        // Given
+
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -75,7 +73,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe normalizar el teléfono correctamente")
     void shouldNormalizePhoneCorrectly() {
-        // Given
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -94,7 +91,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe normalizar la dirección correctamente")
     void shouldNormalizeAddressCorrectly() {
-        // Given
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -115,7 +111,6 @@ class PersonTest {
     @ValueSource(strings = {"  ", "\t", "\n"})
     @DisplayName("Debe validar que el nombre no sea nulo o vacío")
     void shouldValidateNameNotNullOrBlank(String name) {
-        // Given
         Person person = Person.builder()
                 .name(name)
                 .gender(GenderType.M)
@@ -124,8 +119,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When & Then
-        ValidationException exception = assertThrows(ValidationException.class, 
+        ValidationException exception = assertThrows(ValidationException.class,
                 person::validate);
         assertEquals("El nombre es obligatorio", exception.getMessage());
     }
@@ -133,7 +127,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe validar que el nombre contenga al menos nombre y apellido")
     void shouldValidateNameContainsAtLeastTwoWords() {
-        // Given
         Person person = Person.builder()
                 .name("Juan")
                 .gender(GenderType.M)
@@ -142,8 +135,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When & Then
-        ValidationException exception = assertThrows(ValidationException.class, 
+        ValidationException exception = assertThrows(ValidationException.class,
                 person::validate);
         assertEquals("El nombre debe contener al menos nombre y apellido", exception.getMessage());
     }
@@ -151,7 +143,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe validar que el nombre solo contenga letras")
     void shouldValidateNameOnlyContainsLetters() {
-        // Given
         Person person = Person.builder()
                 .name("Juan123 Perez")
                 .gender(GenderType.M)
@@ -160,8 +151,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When & Then
-        ValidationException exception = assertThrows(ValidationException.class, 
+        ValidationException exception = assertThrows(ValidationException.class,
                 person::validate);
         assertEquals("El nombre solo puede contener letras y espacios", exception.getMessage());
     }
@@ -169,7 +159,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe aceptar nombres con tildes y ñ")
     void shouldAcceptNamesWithAccentsAndÑ() {
-        // Given
         Person person = Person.builder()
                 .name("José María Peña")
                 .gender(GenderType.M)
@@ -178,7 +167,6 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When & Then
         assertDoesNotThrow(person::validate);
         assertEquals("José María Peña", person.getName());
     }
@@ -186,7 +174,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe validar que el género no sea nulo")
     void shouldValidateGenderNotNull() {
-        // Given
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(null)
@@ -195,8 +182,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When & Then
-        ValidationException exception = assertThrows(ValidationException.class, 
+        ValidationException exception = assertThrows(ValidationException.class,
                 person::validate);
         assertEquals("El género es obligatorio", exception.getMessage());
     }
@@ -206,7 +192,6 @@ class PersonTest {
     @ValueSource(strings = {"  ", "\t"})
     @DisplayName("Debe validar que la identificación no sea nula o vacía")
     void shouldValidateIdentificationNotNullOrBlank(String identification) {
-        // Given
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -215,8 +200,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When & Then
-        ValidationException exception = assertThrows(ValidationException.class, 
+        ValidationException exception = assertThrows(ValidationException.class,
                 person::validate);
         assertEquals("La identificación es obligatoria", exception.getMessage());
     }
@@ -224,7 +208,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe validar que la identificación contenga solo números")
     void shouldValidateIdentificationOnlyContainsNumbers() {
-        // Given
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -233,8 +216,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When & Then
-        ValidationException exception = assertThrows(ValidationException.class, 
+        ValidationException exception = assertThrows(ValidationException.class,
                 person::validate);
         assertEquals("La identificación debe contener solo números", exception.getMessage());
     }
@@ -242,7 +224,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe validar que la identificación tenga exactamente 10 dígitos")
     void shouldValidateIdentificationHasExactly10Digits() {
-        // Given
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -251,8 +232,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When & Then
-        ValidationException exception = assertThrows(ValidationException.class, 
+        ValidationException exception = assertThrows(ValidationException.class,
                 person::validate);
         assertEquals("La identificación debe tener 10 dígitos", exception.getMessage());
     }
@@ -262,7 +242,6 @@ class PersonTest {
     @ValueSource(strings = {"  ", "\t"})
     @DisplayName("Debe validar que la dirección no sea nula o vacía")
     void shouldValidateAddressNotNullOrBlank(String address) {
-        // Given
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -271,8 +250,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When & Then
-        ValidationException exception = assertThrows(ValidationException.class, 
+        ValidationException exception = assertThrows(ValidationException.class,
                 person::validate);
         assertEquals("La dirección es obligatoria", exception.getMessage());
     }
@@ -280,7 +258,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe validar que la dirección tenga al menos 5 caracteres")
     void shouldValidateAddressMinimumLength() {
-        // Given
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -289,8 +266,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When & Then
-        ValidationException exception = assertThrows(ValidationException.class, 
+        ValidationException exception = assertThrows(ValidationException.class,
                 person::validate);
         assertEquals("La dirección debe tener al menos 5 caracteres", exception.getMessage());
     }
@@ -300,7 +276,6 @@ class PersonTest {
     @ValueSource(strings = {"  ", "\t"})
     @DisplayName("Debe validar que el teléfono no sea nulo o vacío")
     void shouldValidatePhoneNotNullOrBlank(String phone) {
-        // Given
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -309,8 +284,7 @@ class PersonTest {
                 .phone(phone)
                 .build();
 
-        // When & Then
-        ValidationException exception = assertThrows(ValidationException.class, 
+        ValidationException exception = assertThrows(ValidationException.class,
                 person::validate);
         assertEquals("El teléfono es obligatorio", exception.getMessage());
     }
@@ -318,7 +292,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe validar que el teléfono contenga solo números")
     void shouldValidatePhoneOnlyContainsNumbers() {
-        // Given
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -327,8 +300,7 @@ class PersonTest {
                 .phone("098ABC4321")
                 .build();
 
-        // When & Then
-        ValidationException exception = assertThrows(ValidationException.class, 
+        ValidationException exception = assertThrows(ValidationException.class,
                 person::validate);
         assertEquals("El teléfono debe contener solo números", exception.getMessage());
     }
@@ -336,7 +308,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe validar que el teléfono tenga exactamente 10 dígitos")
     void shouldValidatePhoneHasExactly10Digits() {
-        // Given
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -345,8 +316,7 @@ class PersonTest {
                 .phone("098765432")  // Solo 9 dígitos
                 .build();
 
-        // When & Then
-        ValidationException exception = assertThrows(ValidationException.class, 
+        ValidationException exception = assertThrows(ValidationException.class,
                 person::validate);
         assertEquals("El teléfono debe tener 10 dígitos", exception.getMessage());
     }
@@ -354,7 +324,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe validar todos los campos correctamente")
     void shouldValidateAllFieldsCorrectly() {
-        // Given
         Person person = Person.builder()
                 .personId(UUID.randomUUID())
                 .name("Juan Perez Lopez")
@@ -364,14 +333,12 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When & Then
         assertDoesNotThrow(person::validate);
     }
 
     @Test
     @DisplayName("Debe usar builder correctamente para género femenino")
     void shouldUseBuilderForFemaleGender() {
-        // Given & When
         Person person = Person.builder()
                 .personId(UUID.randomUUID())
                 .name("Maria Lopez")
@@ -390,7 +357,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe normalizar nombre con múltiples espacios")
     void shouldNormalizeNameWithMultipleSpaces() {
-        // Given
         Person person = Person.builder()
                 .name("   JUAN    CARLOS    PEREZ   ")
                 .gender(GenderType.M)
@@ -409,7 +375,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe capitalizar correctamente nombres en minúsculas")
     void shouldCapitalizeNamesInLowercase() {
-        // Given
         Person person = Person.builder()
                 .name("juan perez")
                 .gender(GenderType.M)
@@ -428,7 +393,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe aceptar identificación en el límite exacto")
     void shouldAcceptIdentificationAtExactBoundary() {
-        // Given
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -437,7 +401,6 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When & Then
         assertDoesNotThrow(person::validate);
         assertEquals("0123456789", person.getIdentification());
     }
@@ -445,7 +408,6 @@ class PersonTest {
     @Test
     @DisplayName("Debe aceptar dirección en el límite mínimo")
     void shouldAcceptAddressAtMinimumBoundary() {
-        // Given
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -454,7 +416,6 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When & Then
         assertDoesNotThrow(person::validate);
     }
 }

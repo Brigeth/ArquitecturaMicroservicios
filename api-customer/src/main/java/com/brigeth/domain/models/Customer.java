@@ -14,9 +14,7 @@ public class Customer extends Person {
     private String password;
     private Boolean state;
 
-    /**
-     * Normaliza y valida todos los campos del cliente (incluye Person)
-     */
+
     @Override
     public void normalizeAndValidate() {
         super.normalizeAndValidate();
@@ -24,15 +22,10 @@ public class Customer extends Person {
         validateState(this.state);
     }
 
-    /**
-     * Valida solo el cliente (sin validar Person)
-     */
     public void validateCustomer() {
         validatePassword(this.password);
         validateState(this.state);
     }
-
-    // ==================== VALIDACIONES ====================
 
     private void validatePassword(String password) {
         if (password == null || password.isBlank()) {

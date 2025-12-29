@@ -23,9 +23,6 @@ public class Person {
     private String address;
     private String phone;
 
-    /**
-     * Normaliza y valida todos los campos de la persona
-     */
     public void normalizeAndValidate() {
         this.name = normalizeName(this.name);
         this.identification = normalizeIdentification(this.identification);
@@ -34,9 +31,6 @@ public class Person {
         validate();
     }
 
-    /**
-     * Valida que todos los campos cumplan las reglas de negocio
-     */
     public void validate() {
         validateName(this.name);
         validateGender(this.gender);
@@ -45,22 +39,18 @@ public class Person {
         validatePhone(this.phone);
     }
 
-    // ==================== VALIDACIONES ====================
-
     private void validateName(String name) {
         if (name == null || name.isBlank()) {
             throw new ValidationException("El nombre es obligatorio");
         }
 
         String normalized = name.trim().replaceAll("\\s+", " ");
-        
-        // Debe contener al menos nombre y apellido
+
         String[] parts = normalized.split(" ");
         if (parts.length < 2) {
             throw new ValidationException("El nombre debe contener al menos nombre y apellido");
         }
 
-        // Solo letras y espacios (incluye acentos y ñ)
         if (!normalized.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$")) {
             throw new ValidationException("El nombre solo puede contener letras y espacios");
         }
@@ -79,12 +69,10 @@ public class Person {
 
         String normalized = identification.trim();
 
-        // Debe contener solo números
         if (!normalized.matches("^\\d+$")) {
             throw new ValidationException("La identificación debe contener solo números");
         }
 
-        // Debe tener exactamente 10 dígitos
         if (normalized.length() != 10) {
             throw new ValidationException("La identificación debe tener 10 dígitos");
         }
@@ -107,7 +95,6 @@ public class Person {
 
         String normalized = phone.trim().replaceAll("[\\s-]", "");
 
-        // Debe contener solo números
         if (!normalized.matches("^\\d+$")) {
             throw new ValidationException("El teléfono debe contener solo números");
         }
@@ -117,8 +104,6 @@ public class Person {
             throw new ValidationException("El teléfono debe tener 10 dígitos");
         }
     }
-
-    // ==================== NORMALIZACIÓN ====================
 
     protected String normalizeName(String name) {
         if (name == null) return null;
@@ -146,19 +131,16 @@ public class Person {
 
     protected String normalizeIdentification(String identification) {
         if (identification == null) return null;
-        // Eliminar espacios y guiones
         return identification.trim().replaceAll("[\\s-]", "");
     }
 
     protected String normalizePhone(String phone) {
         if (phone == null) return null;
-        // Eliminar espacios, guiones y paréntesis
         return phone.trim().replaceAll("[\\s\\-()]", "");
     }
 
     protected String normalizeAddress(String address) {
         if (address == null) return null;
-        // Eliminar espacios múltiples
         return address.trim().replaceAll("\\s+", " ");
     }
 }

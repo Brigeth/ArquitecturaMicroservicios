@@ -62,12 +62,10 @@ class ValidationServiceImplTest {
     @Test
     @DisplayName("Debe validar identificación única exitosamente cuando no existe duplicado")
     void shouldValidateUniqueIdentificationSuccessfully() {
-        // Given
         String newIdentification = "1111111111";
         when(customerPersistencePort.getAllCustomers())
                 .thenReturn(Flux.just(testCustomer, anotherCustomer));
 
-        // When & Then
         StepVerifier.create(validationService.validateUniqueIdentification(newIdentification, null))
                 .verifyComplete();
 
@@ -77,12 +75,10 @@ class ValidationServiceImplTest {
     @Test
     @DisplayName("Debe lanzar excepción cuando la identificación está duplicada")
     void shouldThrowExceptionWhenIdentificationIsDuplicated() {
-        // Given
         String duplicatedIdentification = "1234567890";
         when(customerPersistencePort.getAllCustomers())
                 .thenReturn(Flux.just(testCustomer, anotherCustomer));
 
-        // When & Then
         StepVerifier.create(validationService.validateUniqueIdentification(duplicatedIdentification, null))
                 .expectError(DuplicateIdentificationException.class)
                 .verify();
@@ -93,13 +89,11 @@ class ValidationServiceImplTest {
     @Test
     @DisplayName("Debe permitir identificación duplicada cuando pertenece al mismo cliente (actualización)")
     void shouldAllowDuplicateIdentificationForSameCustomer() {
-        // Given
         String customerId = testCustomer.getPersonId().toString();
         String identification = testCustomer.getIdentification();
         when(customerPersistencePort.getAllCustomers())
                 .thenReturn(Flux.just(testCustomer, anotherCustomer));
 
-        // When & Then
         StepVerifier.create(validationService.validateUniqueIdentification(identification, customerId))
                 .verifyComplete();
 
@@ -109,13 +103,12 @@ class ValidationServiceImplTest {
     @Test
     @DisplayName("Debe lanzar excepción cuando la identificación está duplicada en otro cliente durante actualización")
     void shouldThrowExceptionWhenIdentificationIsDuplicatedInAnotherCustomer() {
-        // Given
+
         String customerId = testCustomer.getPersonId().toString();
         String duplicatedIdentification = anotherCustomer.getIdentification();
         when(customerPersistencePort.getAllCustomers())
                 .thenReturn(Flux.just(testCustomer, anotherCustomer));
 
-        // When & Then
         StepVerifier.create(validationService.validateUniqueIdentification(duplicatedIdentification, customerId))
                 .verifyError(DuplicateIdentificationException.class);
 
@@ -125,12 +118,10 @@ class ValidationServiceImplTest {
     @Test
     @DisplayName("Debe validar identificación única cuando no hay clientes")
     void shouldValidateUniqueIdentificationWhenNoCustomersExist() {
-        // Given
         String newIdentification = "1234567890";
         when(customerPersistencePort.getAllCustomers())
                 .thenReturn(Flux.empty());
 
-        // When & Then
         StepVerifier.create(validationService.validateUniqueIdentification(newIdentification, null))
                 .verifyComplete();
 
@@ -140,36 +131,16 @@ class ValidationServiceImplTest {
     @Test
     @DisplayName("Debe validar que el cliente existe exitosamente")
     void shouldValidateCustomerExistsSuccessfully() {
-        // Given
         String customerId = testCustomer.getPersonId().toString();
         when(customerPersistencePort.getCustomerById(customerId))
                 .thenReturn(Mono.just(testCustomer));
 
-        // When & Then
         StepVerifier.create(validationService.validateCustomerExists(customerId))
                 .verifyComplete();
 
         verify(customerPersistencePort, times(1)).getCustomerById(customerId);
     }
 
-    // TODO: Test temporalmente deshabilitado - revisar StepVerifier con errores reactivos
-    /*
-    @Test
-    @DisplayName("Debe lanzar excepción cuando el cliente no existe")
-    void shouldThrowExceptionWhenCustomerDoesNotExist() {
-        // Given
-        String customerId = UUID.randomUUID().toString();
-        when(customerPersistencePort.getCustomerById(customerId))
-                .thenReturn(Mono.empty());
-
-        // When & Then
-        StepVerifier.create(validationService.validateCustomerExists(customerId))
-                .expectError(CustomerNotFoundException.class)
-                .verify();
-
-        verify(customerPersistencePort, times(1)).getCustomerById(customerId);
-    }
-    */
 
     @Test
     @DisplayName("Debe mapear error del repositorio a CustomerNotFoundException")
@@ -190,13 +161,11 @@ class ValidationServiceImplTest {
     @Test
     @DisplayName("Debe validar múltiples clientes con identificaciones únicas")
     void shouldValidateMultipleCustomersWithUniqueIdentifications() {
-        // Given
         String newIdentification1 = "1111111111";
         String newIdentification2 = "2222222222";
         when(customerPersistencePort.getAllCustomers())
                 .thenReturn(Flux.just(testCustomer, anotherCustomer));
 
-        // When & Then
         StepVerifier.create(validationService.validateUniqueIdentification(newIdentification1, null))
                 .verifyComplete();
 
@@ -209,12 +178,10 @@ class ValidationServiceImplTest {
     @Test
     @DisplayName("Debe validar correctamente con excludeCustomerId null")
     void shouldValidateCorrectlyWithNullExcludeCustomerId() {
-        // Given
         String identification = testCustomer.getIdentification();
         when(customerPersistencePort.getAllCustomers())
                 .thenReturn(Flux.just(testCustomer));
 
-        // When & Then
         StepVerifier.create(validationService.validateUniqueIdentification(identification, null))
                 .expectError(DuplicateIdentificationException.class)
                 .verify();

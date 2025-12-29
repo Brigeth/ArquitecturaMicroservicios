@@ -18,7 +18,6 @@ class CustomerTest {
     @Test
     @DisplayName("Debe crear un cliente válido")
     void shouldCreateValidCustomer() {
-        // Given & When
         Customer customer = Customer.builder()
                 .personId(UUID.randomUUID())
                 .name("Juan Perez Lopez")
@@ -29,8 +28,6 @@ class CustomerTest {
                 .password("SecurePass123")
                 .state(true)
                 .build();
-
-        // Then
         assertNotNull(customer);
         assertEquals("Juan Perez Lopez", customer.getName());
         assertEquals("SecurePass123", customer.getPassword());
@@ -40,7 +37,6 @@ class CustomerTest {
     @Test
     @DisplayName("Debe normalizar y validar un cliente correctamente")
     void shouldNormalizeAndValidateCustomer() {
-        // Given
         Customer customer = Customer.builder()
                 .name("  juan   perez  ")
                 .gender(GenderType.M)
@@ -64,7 +60,7 @@ class CustomerTest {
     @Test
     @DisplayName("Debe validar contraseña con longitud mínima")
     void shouldValidatePasswordMinimumLength() {
-        // Given
+
         Customer customer = Customer.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -75,7 +71,6 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        // When & Then
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
         assertEquals("La contraseña debe tener al menos 8 caracteres", exception.getMessage());
@@ -84,7 +79,6 @@ class CustomerTest {
     @Test
     @DisplayName("Debe validar contraseña con longitud máxima")
     void shouldValidatePasswordMaximumLength() {
-        // Given
         Customer customer = Customer.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -95,7 +89,6 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        // When & Then
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
         assertEquals("La contraseña no puede exceder 20 caracteres", exception.getMessage());
@@ -104,7 +97,6 @@ class CustomerTest {
     @Test
     @DisplayName("Debe validar que la contraseña contenga al menos una mayúscula")
     void shouldValidatePasswordContainsUppercase() {
-        // Given
         Customer customer = Customer.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -115,7 +107,6 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        // When & Then
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
         assertEquals("La contraseña debe contener al menos una letra mayúscula", exception.getMessage());
@@ -124,7 +115,6 @@ class CustomerTest {
     @Test
     @DisplayName("Debe validar que la contraseña contenga al menos una minúscula")
     void shouldValidatePasswordContainsLowercase() {
-        // Given
         Customer customer = Customer.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -135,7 +125,6 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        // When & Then
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
         assertEquals("La contraseña debe contener al menos una letra minúscula", exception.getMessage());
@@ -144,7 +133,6 @@ class CustomerTest {
     @Test
     @DisplayName("Debe validar que la contraseña contenga al menos un número")
     void shouldValidatePasswordContainsNumber() {
-        // Given
         Customer customer = Customer.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -155,7 +143,6 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        // When & Then
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
         assertEquals("La contraseña debe contener al menos un número", exception.getMessage());
@@ -166,7 +153,6 @@ class CustomerTest {
     @ValueSource(strings = {"  ", "\t", "\n"})
     @DisplayName("Debe validar que la contraseña no sea nula o vacía")
     void shouldValidatePasswordNotNullOrBlank(String password) {
-        // Given
         Customer customer = Customer.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -177,7 +163,6 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        // When & Then
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
         assertEquals("La contraseña es obligatoria", exception.getMessage());
@@ -186,7 +171,6 @@ class CustomerTest {
     @Test
     @DisplayName("Debe validar que el estado no sea nulo")
     void shouldValidateStateNotNull() {
-        // Given
         Customer customer = Customer.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -197,7 +181,6 @@ class CustomerTest {
                 .state(null)
                 .build();
 
-        // When & Then
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
         assertEquals("El estado es obligatorio", exception.getMessage());
@@ -206,7 +189,6 @@ class CustomerTest {
     @Test
     @DisplayName("Debe validar estado como true")
     void shouldValidateStateAsTrue() {
-        // Given
         Customer customer = Customer.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -217,7 +199,6 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        // When & Then
         assertDoesNotThrow(customer::validateCustomer);
         assertTrue(customer.getState());
     }
@@ -225,7 +206,7 @@ class CustomerTest {
     @Test
     @DisplayName("Debe validar estado como false")
     void shouldValidateStateAsFalse() {
-        // Given
+
         Customer customer = Customer.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -236,7 +217,6 @@ class CustomerTest {
                 .state(false)
                 .build();
 
-        // When & Then
         assertDoesNotThrow(customer::validateCustomer);
         assertFalse(customer.getState());
     }
@@ -244,10 +224,8 @@ class CustomerTest {
     @Test
     @DisplayName("Debe usar builder correctamente")
     void shouldUseBuilderCorrectly() {
-        // Given
-        UUID id = UUID.randomUUID();
 
-        // When
+        UUID id = UUID.randomUUID();
         Customer customer = Customer.builder()
                 .personId(id)
                 .name("Maria Lopez")
@@ -258,8 +236,6 @@ class CustomerTest {
                 .password("Password456")
                 .state(true)
                 .build();
-
-        // Then
         assertEquals(id, customer.getPersonId());
         assertEquals("Maria Lopez", customer.getName());
         assertEquals(GenderType.F, customer.getGender());
@@ -273,7 +249,7 @@ class CustomerTest {
     @Test
     @DisplayName("Debe usar toBuilder correctamente")
     void shouldUseToBuilderCorrectly() {
-        // Given
+
         Customer original = Customer.builder()
                 .personId(UUID.randomUUID())
                 .name("Juan Perez")
@@ -285,13 +261,11 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        // When
         Customer modified = original.toBuilder()
                 .address("Nueva Direccion 789")
                 .phone("0999999999")
                 .build();
 
-        // Then
         assertEquals(original.getPersonId(), modified.getPersonId());
         assertEquals(original.getName(), modified.getName());
         assertEquals("Nueva Direccion 789", modified.getAddress());
@@ -301,7 +275,7 @@ class CustomerTest {
     @Test
     @DisplayName("Debe validar todos los campos heredados de Person")
     void shouldValidateAllFieldsFromPerson() {
-        // Given
+
         Customer customer = Customer.builder()
                 .name("J")  // Nombre inválido
                 .gender(GenderType.M)
@@ -312,7 +286,7 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        // When & Then
+
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
         assertEquals("El nombre debe contener al menos nombre y apellido", exception.getMessage());
@@ -321,7 +295,7 @@ class CustomerTest {
     @Test
     @DisplayName("Debe aceptar contraseña válida en el límite inferior")
     void shouldAcceptPasswordAtMinimumBoundary() {
-        // Given
+
         Customer customer = Customer.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -332,14 +306,14 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        // When & Then
+
         assertDoesNotThrow(customer::validateCustomer);
     }
 
     @Test
     @DisplayName("Debe aceptar contraseña válida en el límite superior")
     void shouldAcceptPasswordAtMaximumBoundary() {
-        // Given
+
         Customer customer = Customer.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
@@ -350,7 +324,6 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        // When & Then
         assertDoesNotThrow(customer::validateCustomer);
     }
 }

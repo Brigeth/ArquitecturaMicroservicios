@@ -17,10 +17,6 @@ import reactor.core.publisher.Mono;
 
 import java.util.UUID;
 
-/**
- * Adaptador REST para operaciones de Customer
- * Capa de infraestructura - Entrada REST
- */
 @Slf4j
 @RestController
 @RequiredArgsConstructor
