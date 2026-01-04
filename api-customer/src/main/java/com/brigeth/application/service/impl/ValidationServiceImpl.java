@@ -18,7 +18,7 @@ public class ValidationServiceImpl implements ValidationService {
 
     @Override
     public Mono<Void> validateUniqueIdentification(String identification, String excludeCustomerId) {
-        log.debug("Validando unicidad de identificación: {}", identification);
+        log.debug("Validating unique identification: {}", identification);
         
         return customerPersistencePort.getAllCustomers()
             .filter(customer -> customer.getIdentification().equals(identification))
@@ -27,7 +27,7 @@ public class ValidationServiceImpl implements ValidationService {
             .hasElements()
             .flatMap(exists -> {
                 if (exists) {
-                    log.warn("Identificación duplicada: {}", identification);
+                    log.warn("Duplicate identification: {}", identification);
                     return Mono.error(new DuplicateIdentificationException(identification));
                 }
                 return Mono.empty();
@@ -36,12 +36,12 @@ public class ValidationServiceImpl implements ValidationService {
 
     @Override
     public Mono<Void> validateCustomerExists(String customerId) {
-        log.debug("Validando existencia del cliente: {}", customerId);
+        log.debug("Validating customer existence: {}", customerId);
         
         return customerPersistencePort.getCustomerById(customerId)
             .then()
             .onErrorMap(e -> {
-                log.warn("Cliente no encontrado: {}", customerId);
+                log.warn("Customer not found: {}", customerId);
                 return new CustomerNotFoundException(customerId);
             });
     }

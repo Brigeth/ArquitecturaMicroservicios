@@ -41,67 +41,67 @@ public class Person {
 
     private void validateName(String name) {
         if (name == null || name.isBlank()) {
-            throw new ValidationException("El nombre es obligatorio");
+            throw new ValidationException("Name is required");
         }
 
         String normalized = name.trim().replaceAll("\\s+", " ");
 
         String[] parts = normalized.split(" ");
         if (parts.length < 2) {
-            throw new ValidationException("El nombre debe contener al menos nombre y apellido");
+            throw new ValidationException("The name must contain at least a first and last name.");
         }
 
         if (!normalized.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$")) {
-            throw new ValidationException("El nombre solo puede contener letras y espacios");
+            throw new ValidationException("The name can only contain letters and spaces.");
         }
     }
 
     private void validateGender(GenderType gender) {
         if (gender == null) {
-            throw new ValidationException("El género es obligatorio");
+            throw new ValidationException("Gender is required");
         }
     }
 
     private void validateIdentification(String identification) {
         if (identification == null || identification.isBlank()) {
-            throw new ValidationException("La identificación es obligatoria");
+            throw new ValidationException("Identification is mandatory");
         }
 
         String normalized = identification.trim();
 
         if (!normalized.matches("^\\d+$")) {
-            throw new ValidationException("La identificación debe contener solo números");
+            throw new ValidationException("The identification must contain only numbers.");
         }
 
         if (normalized.length() != 10) {
-            throw new ValidationException("La identificación debe tener 10 dígitos");
+            throw new ValidationException("The identification must have 10 digits.");
         }
     }
 
     private void validateAddress(String address) {
         if (address == null || address.isBlank()) {
-            throw new ValidationException("La dirección es obligatoria");
+            throw new ValidationException("The address is required");
         }
 
         if (address.trim().length() < 5) {
-            throw new ValidationException("La dirección debe tener al menos 5 caracteres");
+            throw new ValidationException("The address must be at least 5 characters long");
         }
     }
 
     private void validatePhone(String phone) {
         if (phone == null || phone.isBlank()) {
-            throw new ValidationException("El teléfono es obligatorio");
+            throw new ValidationException("The phone is required");
         }
 
         String normalized = phone.trim().replaceAll("[\\s-]", "");
 
         if (!normalized.matches("^\\d+$")) {
-            throw new ValidationException("El teléfono debe contener solo números");
+            throw new ValidationException("The phone number should only contain numbers.");
         }
 
         // Debe tener exactamente 10 dígitos
         if (normalized.length() != 10) {
-            throw new ValidationException("El teléfono debe tener 10 dígitos");
+            throw new ValidationException("The phone number must have 10 digits.");
         }
     }
 

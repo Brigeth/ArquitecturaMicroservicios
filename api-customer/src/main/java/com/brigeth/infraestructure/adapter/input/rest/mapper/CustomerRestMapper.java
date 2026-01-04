@@ -27,9 +27,6 @@ public interface CustomerRestMapper {
     @Mapping(source = "personId", target = "customerId")
     CustomerResponse toResponse(Customer customer);
 
-    /**
-     * Normaliza el género a mayúsculas
-     */
     @Named("normalizeGender")
     default GenderType normalizeGender(String gender) {
         if (gender == null || gender.isBlank()) {

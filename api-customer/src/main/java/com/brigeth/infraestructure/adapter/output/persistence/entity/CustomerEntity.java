@@ -23,7 +23,6 @@ public class CustomerEntity {
     private Boolean state;
 
     public CustomerEntity() {
-        this.id = UUID.randomUUID().toString();  // Genera UUID como String
+        this.id = UUID.randomUUID().toString();
     }
-
 }

@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CustomerJpaRepository extends JpaRepository <CustomerEntity, String>{
-    //la clave primaria de la entidad CustomerEntity es un String
 
 }

@@ -1,1 +1,1626 @@
-2025-12-26 10:38:31 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1d15h40m12s349ms472µs200ns).
+2026-01-03 02:18:43 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h56m21s800ms824µs200ns).
+2026-01-03 19:31:55 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17h13m16s995ms175µs900ns).
+2026-01-03 19:35:22 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 19:35:23 INFO  com.brigeth.ApiCustomerApplication - Starting ApiCustomerApplication using Java 17.0.12 with PID 18132 (C:\Users\btoapana\Downloads\Challenge\api-customer\build\classes\java\main started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 19:35:23 INFO  com.brigeth.ApiCustomerApplication - The following 1 profile is active: "local"
+2026-01-03 19:35:29 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 19:35:29 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 19:35:29 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 19:35:31 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 19:35:32 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1224e1b6
+2026-01-03 19:35:32 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 19:35:32 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-03 19:35:32 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.11
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 19:35:36 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 19:35:40 INFO  com.brigeth.ApiCustomerApplication - Started ApiCustomerApplication in 19.764 seconds (process running for 21.437)
+2026-01-03 19:37:50 INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1939 ms
+2026-01-03 19:38:01 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para obtener todos los clientes
+2026-01-03 19:38:01 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Lista de clientes recuperada exitosamente
+2026-01-03 19:38:55 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to update client: 02c3ffe8-f25a-4121-bd03-9ba76d334bb8
+2026-01-03 19:38:55 INFO  c.b.a.s.impl.CustomerServiceImpl - Updating customer: 02c3ffe8-f25a-4121-bd03-9ba76d334bb8
+2026-01-03 19:38:55 INFO  c.b.a.s.impl.CustomerServiceImpl - Customer updated successfully: 02c3ffe8-f25a-4121-bd03-9ba76d334bb8
+2026-01-03 19:38:55 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Client successfully updated: 02c3ffe8-f25a-4121-bd03-9ba76d334bb8
+2026-01-03 19:39:07 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to update client: 02c3ffe8-f25a-4121-bd03-9ba76d334bb8
+2026-01-03 19:39:07 INFO  c.b.a.s.impl.CustomerServiceImpl - Updating customer: 02c3ffe8-f25a-4121-bd03-9ba76d334bb8
+2026-01-03 19:39:07 INFO  c.b.a.s.impl.CustomerServiceImpl - Customer updated successfully: 02c3ffe8-f25a-4121-bd03-9ba76d334bb8
+2026-01-03 19:39:07 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Client successfully updated: 02c3ffe8-f25a-4121-bd03-9ba76d334bb8
+2026-01-03 19:57:06 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 19:57:06 INFO  com.brigeth.ApiCustomerApplication - Starting ApiCustomerApplication using Java 17.0.12 with PID 21280 (C:\Users\btoapana\Downloads\Challenge\api-customer\build\classes\java\main started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 19:57:06 INFO  com.brigeth.ApiCustomerApplication - The following 1 profile is active: "local"
+2026-01-03 19:57:10 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 19:57:10 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 19:57:10 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 19:57:11 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 19:57:12 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6d3ad37a
+2026-01-03 19:57:12 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 19:57:12 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-03 19:57:12 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.11
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 19:57:15 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 19:57:19 WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-01-03 19:57:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-03 19:57:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-03 19:57:20 ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-01-03 20:04:36 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 20:04:36 INFO  com.brigeth.ApiCustomerApplication - Starting ApiCustomerApplication using Java 17.0.12 with PID 20248 (C:\Users\btoapana\Downloads\Challenge\api-customer\build\classes\java\main started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 20:04:36 INFO  com.brigeth.ApiCustomerApplication - The following 1 profile is active: "local"
+2026-01-03 20:04:40 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 20:04:41 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 20:04:41 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 20:04:42 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 20:04:43 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@727453a3
+2026-01-03 20:04:43 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 20:04:43 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-03 20:04:43 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.11
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 20:04:46 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 20:04:51 WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-01-03 20:04:51 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-03 20:04:51 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-03 20:04:51 ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-01-03 20:21:30 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 20:21:30 INFO  com.brigeth.ApiCustomerApplication - Starting ApiCustomerApplication using Java 17.0.12 with PID 13188 (C:\Users\btoapana\Downloads\Challenge\api-customer\build\classes\java\main started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 20:21:30 INFO  com.brigeth.ApiCustomerApplication - The following 1 profile is active: "local"
+2026-01-03 20:21:32 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 20:21:32 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:54e38b68-ee6b-4361-a322-ea9fba6deeb2 user=SA
+2026-01-03 20:21:32 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 20:21:33 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 20:21:33 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 20:21:33 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 20:21:33 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 20:21:34 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 20:21:36 INFO  com.brigeth.ApiCustomerApplication - Started ApiCustomerApplication in 6.067 seconds (process running for 6.607)
+2026-01-03 20:25:36 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 20:25:36 INFO  c.b.a.ApiCustomerApplicationTests - Starting ApiCustomerApplicationTests using Java 17.0.12 with PID 2968 (started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 20:25:36 INFO  c.b.a.ApiCustomerApplicationTests - The following 1 profile is active: "local"
+2026-01-03 20:25:45 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 20:25:47 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:807bfd62-cbe9-4d59-ab12-f363d21f0d14 user=SA
+2026-01-03 20:25:47 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 20:25:47 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 20:25:48 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 20:25:48 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 20:25:49 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 20:25:52 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 20:25:55 INFO  c.b.a.ApiCustomerApplicationTests - Started ApiCustomerApplicationTests in 19.863 seconds (process running for 23.813)
+2026-01-03 20:25:56 INFO  c.b.a.s.impl.CustomerServiceImpl - Updating customer: b6c1a97e-983c-4b58-9a7f-fb0acc9fcc89
+2026-01-03 20:25:56 INFO  c.b.a.s.impl.CustomerServiceImpl - Customer updated successfully: b6c1a97e-983c-4b58-9a7f-fb0acc9fcc89
+2026-01-03 20:25:56 INFO  c.b.a.s.impl.CustomerServiceImpl - Deleting customer: b37c787d-ce4e-4772-93d1-f4f7dbfe1fee
+2026-01-03 20:25:56 INFO  c.b.a.s.impl.CustomerServiceImpl - Customer deleted successfully: b37c787d-ce4e-4772-93d1-f4f7dbfe1fee
+2026-01-03 20:25:56 INFO  c.b.a.s.impl.CustomerServiceImpl - Searching for customer: 351efc36-02cf-418d-8f4e-223a1c8cce44
+2026-01-03 20:25:56 INFO  c.b.a.s.impl.CustomerServiceImpl - Searching for customer: 0379a6fb-b424-43b0-9f3f-5e634e2acab5
+2026-01-03 20:25:56 WARN  c.b.a.s.impl.CustomerServiceImpl - Customer not found: 0379a6fb-b424-43b0-9f3f-5e634e2acab5
+2026-01-03 20:25:56 INFO  c.b.a.s.impl.CustomerServiceImpl - Creating a client with identification: 1234567890
+2026-01-03 20:25:56 INFO  c.b.a.s.impl.CustomerServiceImpl - Creating a client with identification: 1234567890
+2026-01-03 20:25:56 INFO  c.b.a.s.impl.CustomerServiceImpl - Client created successfully: b8bb434e-4111-4f16-afa8-ccbee57e538f
+2026-01-03 20:25:56 WARN  c.b.a.s.impl.ValidationServiceImpl - Customer not found: 90ef877a-5720-41c2-b229-8fc9e1a1e63c
+2026-01-03 20:25:56 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 20:25:56 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 0987654321
+2026-01-03 20:25:56 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 20:25:58 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to update client: d6d58fa4-a33d-4046-8baf-1161bf08a1c9
+2026-01-03 20:25:58 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Client successfully updated: d6d58fa4-a33d-4046-8baf-1161bf08a1c9
+2026-01-03 20:25:58 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 3ece078c-0eee-4bc9-9d8b-3f9363592dcf
+2026-01-03 20:25:58 ERROR c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Error searching for client: Customer not found: 3ece078c-0eee-4bc9-9d8b-3f9363592dcf
+2026-01-03 20:25:58 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para eliminar cliente: 8859aa2c-882e-4a13-9c51-6b28179da4ba
+2026-01-03 20:25:58 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente eliminado exitosamente: 8859aa2c-882e-4a13-9c51-6b28179da4ba
+2026-01-03 20:25:58 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 2c750f77-6b07-4976-acd9-7a6a9fdfbef4
+2026-01-03 20:25:58 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Customer found: 2c750f77-6b07-4976-acd9-7a6a9fdfbef4
+2026-01-03 20:25:58 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para obtener todos los clientes
+2026-01-03 20:25:58 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Lista de clientes recuperada exitosamente
+2026-01-03 20:25:58 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para crear nuevo cliente
+2026-01-03 20:25:58 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente creado exitosamente: b44e6cc3-613b-4831-9f2b-47adfdf11519
+2026-01-03 20:25:58 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Customer not found: Customer not found: 123
+2026-01-03 20:25:58 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Invalid argument: Invalid argument
+2026-01-03 20:25:59 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Input validation errors: name: Name is required, email: Email is invalid
+2026-01-03 20:25:59 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Business rule not followed: Business rule violated
+2026-01-03 20:25:59 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain validation error: Validation error message
+2026-01-03 20:25:59 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Duplicate identification: A customer with the identification already exists: 1234567890
+2026-01-03 20:25:59 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Internal Server Error: Unexpected error
+java.lang.Exception: Unexpected error
+	at com.brigeth.infraestructure.adapter.input.rest.exception.GlobalExceptionHandlerTest.shouldHandleGenericException(GlobalExceptionHandlerTest.java:206)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:135)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:104)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:194)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2026-01-03 20:25:59 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain error: Domain error
+2026-01-03 20:25:59 INFO  c.b.i.a.i.r.m.CustomerRestMapperTest - Starting CustomerRestMapperTest using Java 17.0.12 with PID 2968 (started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 20:25:59 INFO  c.b.i.a.i.r.m.CustomerRestMapperTest - The following 1 profile is active: "local"
+2026-01-03 20:25:59 INFO  c.b.i.a.i.r.m.CustomerRestMapperTest - Started CustomerRestMapperTest in 0.134 seconds (process running for 27.6)
+2026-01-03 20:26:00 WARN  c.b.i.a.o.p.CustomerPersistenceAdapter - Client not found in database: ee9880d1-d7a5-41f3-8432-4e6f51aaff42
+2026-01-03 20:26:00 INFO  c.b.i.a.o.p.m.CustomerPersistenceMapperTest - Starting CustomerPersistenceMapperTest using Java 17.0.12 with PID 2968 (started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 20:26:00 INFO  c.b.i.a.o.p.m.CustomerPersistenceMapperTest - The following 1 profile is active: "local"
+2026-01-03 20:26:00 INFO  c.b.i.a.o.p.m.CustomerPersistenceMapperTest - Started CustomerPersistenceMapperTest in 0.156 seconds (process running for 28.293)
+2026-01-03 20:26:03 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-03 20:26:03 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-03 20:26:52 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 20:26:53 INFO  c.b.i.a.o.p.m.CustomerPersistenceMapperTest - Starting CustomerPersistenceMapperTest using Java 17.0.12 with PID 18988 (started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 20:26:53 INFO  c.b.i.a.o.p.m.CustomerPersistenceMapperTest - The following 1 profile is active: "local"
+2026-01-03 20:26:54 INFO  c.b.i.a.o.p.m.CustomerPersistenceMapperTest - Started CustomerPersistenceMapperTest in 5.912 seconds (process running for 25.079)
+2026-01-03 20:26:56 INFO  c.b.a.ApiCustomerApplicationTests - Starting ApiCustomerApplicationTests using Java 17.0.12 with PID 18988 (started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 20:26:56 INFO  c.b.a.ApiCustomerApplicationTests - The following 1 profile is active: "local"
+2026-01-03 20:27:01 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 20:27:03 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:2d102443-d402-4de8-942e-96175b879cb5 user=SA
+2026-01-03 20:27:03 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 20:27:03 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 20:27:04 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 20:27:04 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 20:27:06 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 20:27:10 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 20:27:14 INFO  c.b.a.ApiCustomerApplicationTests - Started ApiCustomerApplicationTests in 17.916 seconds (process running for 44.724)
+2026-01-03 20:27:14 WARN  c.b.a.s.impl.ValidationServiceImpl - Customer not found: 1cc18b63-2ab8-4b38-9615-4dcbf9081831
+2026-01-03 20:27:14 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 20:27:14 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 0987654321
+2026-01-03 20:27:14 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 20:27:15 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to update client: e5125def-c1e0-470c-8c48-6e2afbd808bc
+2026-01-03 20:27:15 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Client successfully updated: e5125def-c1e0-470c-8c48-6e2afbd808bc
+2026-01-03 20:27:15 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 06005f7e-a1dc-45fd-9841-68b7842f3ed8
+2026-01-03 20:27:15 ERROR c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Error searching for client: Customer not found: 06005f7e-a1dc-45fd-9841-68b7842f3ed8
+2026-01-03 20:27:15 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para eliminar cliente: 7e5dbaa1-e81c-41cd-a0f1-d46b4f84f408
+2026-01-03 20:27:15 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente eliminado exitosamente: 7e5dbaa1-e81c-41cd-a0f1-d46b4f84f408
+2026-01-03 20:27:15 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 410778e5-b209-432e-9f26-860bb2e48acf
+2026-01-03 20:27:15 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Customer found: 410778e5-b209-432e-9f26-860bb2e48acf
+2026-01-03 20:27:15 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para obtener todos los clientes
+2026-01-03 20:27:15 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Lista de clientes recuperada exitosamente
+2026-01-03 20:27:15 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para crear nuevo cliente
+2026-01-03 20:27:15 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente creado exitosamente: e311cd84-ab37-46c6-bbe1-e7fd3abbefea
+2026-01-03 20:27:15 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Customer not found: Customer not found: 123
+2026-01-03 20:27:15 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Invalid argument: Invalid argument
+2026-01-03 20:27:15 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Input validation errors: name: Name is required, email: Email is invalid
+2026-01-03 20:27:15 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Business rule not followed: Business rule violated
+2026-01-03 20:27:15 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain validation error: Validation error message
+2026-01-03 20:27:15 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Duplicate identification: A customer with the identification already exists: 1234567890
+2026-01-03 20:27:15 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Internal Server Error: Unexpected error
+java.lang.Exception: Unexpected error
+	at com.brigeth.infraestructure.adapter.input.rest.exception.GlobalExceptionHandlerTest.shouldHandleGenericException(GlobalExceptionHandlerTest.java:206)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:135)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:104)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:194)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2026-01-03 20:27:15 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain error: Domain error
+2026-01-03 20:27:16 INFO  c.b.i.a.i.r.m.CustomerRestMapperTest - Starting CustomerRestMapperTest using Java 17.0.12 with PID 18988 (started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 20:27:16 INFO  c.b.i.a.i.r.m.CustomerRestMapperTest - The following 1 profile is active: "local"
+2026-01-03 20:27:16 INFO  c.b.i.a.i.r.m.CustomerRestMapperTest - Started CustomerRestMapperTest in 0.125 seconds (process running for 46.393)
+2026-01-03 20:27:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-03 20:27:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-03 20:32:01 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 20:32:01 INFO  c.b.a.ApiCustomerApplicationTests - Starting ApiCustomerApplicationTests using Java 17.0.12 with PID 26540 (started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 20:32:01 INFO  c.b.a.ApiCustomerApplicationTests - The following 1 profile is active: "local"
+2026-01-03 20:32:12 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 20:32:14 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:de734307-b244-4f24-98a8-ee4858b9bdc3 user=SA
+2026-01-03 20:32:14 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 20:32:15 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 20:32:15 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 20:32:15 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 20:32:16 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 20:32:21 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 20:32:24 INFO  c.b.a.ApiCustomerApplicationTests - Started ApiCustomerApplicationTests in 24.888 seconds (process running for 30.23)
+2026-01-03 20:32:25 INFO  c.b.a.s.impl.CustomerServiceImpl - Updating customer: f08ed63e-1478-4d6e-87a3-4d6e952fa729
+2026-01-03 20:32:25 INFO  c.b.a.s.impl.CustomerServiceImpl - Customer updated successfully: f08ed63e-1478-4d6e-87a3-4d6e952fa729
+2026-01-03 20:32:25 INFO  c.b.a.s.impl.CustomerServiceImpl - Deleting customer: f792453e-d9bb-440d-b4c8-07907d1ab780
+2026-01-03 20:32:25 INFO  c.b.a.s.impl.CustomerServiceImpl - Customer deleted successfully: f792453e-d9bb-440d-b4c8-07907d1ab780
+2026-01-03 20:32:25 INFO  c.b.a.s.impl.CustomerServiceImpl - Searching for customer: bba6041d-3fea-446e-a62b-6c5346caf7d5
+2026-01-03 20:32:25 INFO  c.b.a.s.impl.CustomerServiceImpl - Searching for customer: 56d920f6-8b23-4b8b-84b8-fe436f198fad
+2026-01-03 20:32:25 WARN  c.b.a.s.impl.CustomerServiceImpl - Customer not found: 56d920f6-8b23-4b8b-84b8-fe436f198fad
+2026-01-03 20:32:25 INFO  c.b.a.s.impl.CustomerServiceImpl - Creating a client with identification: 1234567890
+2026-01-03 20:32:25 INFO  c.b.a.s.impl.CustomerServiceImpl - Creating a client with identification: 1234567890
+2026-01-03 20:32:25 INFO  c.b.a.s.impl.CustomerServiceImpl - Client created successfully: f38651fb-e3db-45c0-88ed-89d6cbbfdbca
+2026-01-03 20:32:25 WARN  c.b.a.s.impl.ValidationServiceImpl - Customer not found: 764b1d33-bc09-4be3-b196-eea0afab3cdc
+2026-01-03 20:32:25 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 20:32:25 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 0987654321
+2026-01-03 20:32:25 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 20:32:26 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to update client: 35665392-4766-4837-b1aa-2be324cd4684
+2026-01-03 20:32:26 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Client successfully updated: 35665392-4766-4837-b1aa-2be324cd4684
+2026-01-03 20:32:26 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 3d85a650-5381-434a-8b6f-5103dd2dd8d8
+2026-01-03 20:32:26 ERROR c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Error searching for client: Customer not found: 3d85a650-5381-434a-8b6f-5103dd2dd8d8
+2026-01-03 20:32:26 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para eliminar cliente: 385cb348-0c63-4223-bfac-c8ccd66a7826
+2026-01-03 20:32:26 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente eliminado exitosamente: 385cb348-0c63-4223-bfac-c8ccd66a7826
+2026-01-03 20:32:26 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 916dad7a-13de-4eb6-8772-5f7fcec3efc4
+2026-01-03 20:32:26 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Customer found: 916dad7a-13de-4eb6-8772-5f7fcec3efc4
+2026-01-03 20:32:26 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para obtener todos los clientes
+2026-01-03 20:32:26 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Lista de clientes recuperada exitosamente
+2026-01-03 20:32:26 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para crear nuevo cliente
+2026-01-03 20:32:26 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente creado exitosamente: 85b1d3b7-cc4d-4ad5-915a-e22980590639
+2026-01-03 20:32:27 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Customer not found: Customer not found: 123
+2026-01-03 20:32:27 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Invalid argument: Invalid argument
+2026-01-03 20:32:27 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Input validation errors: name: Name is required, email: Email is invalid
+2026-01-03 20:32:27 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Business rule not followed: Business rule violated
+2026-01-03 20:32:27 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain validation error: Validation error message
+2026-01-03 20:32:27 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Duplicate identification: A customer with the identification already exists: 1234567890
+2026-01-03 20:32:27 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Internal Server Error: Unexpected error
+java.lang.Exception: Unexpected error
+	at com.brigeth.infraestructure.adapter.input.rest.exception.GlobalExceptionHandlerTest.shouldHandleGenericException(GlobalExceptionHandlerTest.java:206)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:135)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:104)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:194)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2026-01-03 20:32:27 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain error: Domain error
+2026-01-03 20:32:27 WARN  c.b.i.a.o.p.CustomerPersistenceAdapter - Client not found in database: af7933eb-7055-4cf8-aff6-c7909be6c1e9
+2026-01-03 20:32:30 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-03 20:32:30 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-03 20:34:07 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 20:34:07 INFO  c.b.a.ApiCustomerApplicationTests - Starting ApiCustomerApplicationTests using Java 17.0.12 with PID 1420 (started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 20:34:07 INFO  c.b.a.ApiCustomerApplicationTests - The following 1 profile is active: "local"
+2026-01-03 20:34:11 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 20:34:12 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:ef35606c-aec8-4715-9ad1-7791f1473980 user=SA
+2026-01-03 20:34:12 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 20:34:12 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 20:34:12 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 20:34:12 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 20:34:13 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 20:34:15 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 20:34:18 INFO  c.b.a.ApiCustomerApplicationTests - Started ApiCustomerApplicationTests in 12.257 seconds (process running for 21.156)
+2026-01-03 20:34:18 WARN  c.b.a.s.impl.ValidationServiceImpl - Customer not found: c2fcc966-c284-47f4-bfba-97e1e795bbba
+2026-01-03 20:34:18 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 20:34:18 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 0987654321
+2026-01-03 20:34:18 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 20:34:18 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to update client: 014c71b8-f5fc-421d-95fc-51e0a55fb163
+2026-01-03 20:34:18 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Client successfully updated: 014c71b8-f5fc-421d-95fc-51e0a55fb163
+2026-01-03 20:34:18 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: fca9cce8-10b5-46f6-8dd3-e117a4dea82b
+2026-01-03 20:34:18 ERROR c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Error searching for client: Customer not found: fca9cce8-10b5-46f6-8dd3-e117a4dea82b
+2026-01-03 20:34:18 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para eliminar cliente: c334c136-1ea5-4416-9881-3cb842fb21ab
+2026-01-03 20:34:18 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente eliminado exitosamente: c334c136-1ea5-4416-9881-3cb842fb21ab
+2026-01-03 20:34:18 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: a9aa0644-1f06-4125-b893-aa4c1fd941f6
+2026-01-03 20:34:18 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Customer found: a9aa0644-1f06-4125-b893-aa4c1fd941f6
+2026-01-03 20:34:18 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para obtener todos los clientes
+2026-01-03 20:34:18 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Lista de clientes recuperada exitosamente
+2026-01-03 20:34:18 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para crear nuevo cliente
+2026-01-03 20:34:18 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente creado exitosamente: d982a3ce-289a-4ece-a156-2a7473083bcf
+2026-01-03 20:34:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Customer not found: Customer not found: 123
+2026-01-03 20:34:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Invalid argument: Invalid argument
+2026-01-03 20:34:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Input validation errors: name: Name is required, email: Email is invalid
+2026-01-03 20:34:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Business rule not followed: Business rule violated
+2026-01-03 20:34:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain validation error: Validation error message
+2026-01-03 20:34:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Duplicate identification: A customer with the identification already exists: 1234567890
+2026-01-03 20:34:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Internal Server Error: Unexpected error
+java.lang.Exception: Unexpected error
+	at com.brigeth.infraestructure.adapter.input.rest.exception.GlobalExceptionHandlerTest.shouldHandleGenericException(GlobalExceptionHandlerTest.java:206)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:135)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:104)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:194)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2026-01-03 20:34:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain error: Domain error
+2026-01-03 20:34:23 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-03 20:34:23 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-03 20:34:38 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 20:34:38 INFO  c.b.a.ApiCustomerApplicationTests - Starting ApiCustomerApplicationTests using Java 17.0.12 with PID 12968 (started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 20:34:38 INFO  c.b.a.ApiCustomerApplicationTests - The following 1 profile is active: "local"
+2026-01-03 20:34:43 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 20:34:43 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:acc93019-c11f-4bd0-963e-f7651bc51913 user=SA
+2026-01-03 20:34:43 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 20:34:44 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 20:34:44 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 20:34:44 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 20:34:45 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 20:34:47 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 20:34:49 INFO  c.b.a.ApiCustomerApplicationTests - Started ApiCustomerApplicationTests in 12.408 seconds (process running for 21.199)
+2026-01-03 20:34:49 WARN  c.b.a.s.impl.ValidationServiceImpl - Customer not found: 872a041b-d4c0-4315-80e4-671cb3a436a1
+2026-01-03 20:34:49 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 20:34:49 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 0987654321
+2026-01-03 20:34:49 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 20:34:49 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to update client: e8c4c641-ac9a-42f6-90bd-e50ca769b584
+2026-01-03 20:34:49 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Client successfully updated: e8c4c641-ac9a-42f6-90bd-e50ca769b584
+2026-01-03 20:34:49 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: b0b50ba6-7dae-4f34-9877-788dcbafc6d5
+2026-01-03 20:34:49 ERROR c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Error searching for client: Customer not found: b0b50ba6-7dae-4f34-9877-788dcbafc6d5
+2026-01-03 20:34:49 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para eliminar cliente: a3c02cce-3e83-4630-9bd3-69015d490948
+2026-01-03 20:34:49 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente eliminado exitosamente: a3c02cce-3e83-4630-9bd3-69015d490948
+2026-01-03 20:34:49 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 08440816-2ac1-4e6e-b756-3682083ee529
+2026-01-03 20:34:49 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Customer found: 08440816-2ac1-4e6e-b756-3682083ee529
+2026-01-03 20:34:49 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para obtener todos los clientes
+2026-01-03 20:34:49 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Lista de clientes recuperada exitosamente
+2026-01-03 20:34:49 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para crear nuevo cliente
+2026-01-03 20:34:49 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente creado exitosamente: cab8cd06-7eb3-47e2-8c61-ec7dba5be257
+2026-01-03 20:34:50 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Customer not found: Customer not found: 123
+2026-01-03 20:34:50 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Invalid argument: Invalid argument
+2026-01-03 20:34:50 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Input validation errors: name: Name is required, email: Email is invalid
+2026-01-03 20:34:50 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Business rule not followed: Business rule violated
+2026-01-03 20:34:50 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain validation error: Validation error message
+2026-01-03 20:34:50 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Duplicate identification: A customer with the identification already exists: 1234567890
+2026-01-03 20:34:50 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Internal Server Error: Unexpected error
+java.lang.Exception: Unexpected error
+	at com.brigeth.infraestructure.adapter.input.rest.exception.GlobalExceptionHandlerTest.shouldHandleGenericException(GlobalExceptionHandlerTest.java:206)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:135)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:104)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:194)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2026-01-03 20:34:50 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain error: Domain error
+2026-01-03 20:34:53 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-03 20:34:53 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-03 20:38:07 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 20:38:07 INFO  c.b.a.ApiCustomerApplicationTests - Starting ApiCustomerApplicationTests using Java 17.0.12 with PID 32948 (started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 20:38:07 INFO  c.b.a.ApiCustomerApplicationTests - The following 1 profile is active: "local"
+2026-01-03 20:38:13 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 20:38:14 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:1dd66197-fc15-44f2-965b-babb5eb3ff96 user=SA
+2026-01-03 20:38:14 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 20:38:14 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 20:38:14 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 20:38:15 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 20:38:15 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 20:38:18 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 20:38:20 INFO  c.b.a.ApiCustomerApplicationTests - Started ApiCustomerApplicationTests in 13.713 seconds (process running for 17.374)
+2026-01-03 20:38:20 INFO  c.b.a.s.impl.CustomerServiceImpl - Updating customer: 3631d52d-0840-4374-97ed-bcb39a9a5133
+2026-01-03 20:38:20 INFO  c.b.a.s.impl.CustomerServiceImpl - Customer updated successfully: 3631d52d-0840-4374-97ed-bcb39a9a5133
+2026-01-03 20:38:20 INFO  c.b.a.s.impl.CustomerServiceImpl - Deleting customer: 15a85cff-2912-4c2d-b5dd-8e133f261eb8
+2026-01-03 20:38:20 INFO  c.b.a.s.impl.CustomerServiceImpl - Customer deleted successfully: 15a85cff-2912-4c2d-b5dd-8e133f261eb8
+2026-01-03 20:38:20 INFO  c.b.a.s.impl.CustomerServiceImpl - Searching for customer: 3f8f266a-c59e-4ee8-892f-74009c973d9b
+2026-01-03 20:38:20 INFO  c.b.a.s.impl.CustomerServiceImpl - Searching for customer: 69e9149c-39cb-4c16-bdbc-58712bb1af8f
+2026-01-03 20:38:20 WARN  c.b.a.s.impl.CustomerServiceImpl - Customer not found: 69e9149c-39cb-4c16-bdbc-58712bb1af8f
+2026-01-03 20:38:20 INFO  c.b.a.s.impl.CustomerServiceImpl - Creating a client with identification: 1234567890
+2026-01-03 20:38:20 INFO  c.b.a.s.impl.CustomerServiceImpl - Creating a client with identification: 1234567890
+2026-01-03 20:38:20 INFO  c.b.a.s.impl.CustomerServiceImpl - Client created successfully: 9827c46f-8f42-46ef-b2ff-6b3ca37a4920
+2026-01-03 20:38:20 WARN  c.b.a.s.impl.ValidationServiceImpl - Customer not found: 9f505d9b-9f86-4fd0-96fc-74fca58c943c
+2026-01-03 20:38:20 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 20:38:20 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 0987654321
+2026-01-03 20:38:20 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 20:38:21 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to update client: 36cb2e86-0210-48cd-9a08-392dde6799c6
+2026-01-03 20:38:21 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Client successfully updated: 36cb2e86-0210-48cd-9a08-392dde6799c6
+2026-01-03 20:38:21 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: fe804dee-d3ca-45a6-814c-9fba624714c6
+2026-01-03 20:38:21 ERROR c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Error searching for client: Customer not found: fe804dee-d3ca-45a6-814c-9fba624714c6
+2026-01-03 20:38:21 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para eliminar cliente: 34959635-eaef-42ca-b6de-2081c3436972
+2026-01-03 20:38:21 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente eliminado exitosamente: 34959635-eaef-42ca-b6de-2081c3436972
+2026-01-03 20:38:21 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 6e83b7a2-0bb7-4cf1-803a-34fa8de82395
+2026-01-03 20:38:21 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Customer found: 6e83b7a2-0bb7-4cf1-803a-34fa8de82395
+2026-01-03 20:38:21 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para obtener todos los clientes
+2026-01-03 20:38:21 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Lista de clientes recuperada exitosamente
+2026-01-03 20:38:21 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para crear nuevo cliente
+2026-01-03 20:38:21 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente creado exitosamente: d75b3a64-0ade-47c8-bb52-2b598963076b
+2026-01-03 20:38:21 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Customer not found: Customer not found: 123
+2026-01-03 20:38:21 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Invalid argument: Invalid argument
+2026-01-03 20:38:21 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Input validation errors: name: Name is required, email: Email is invalid
+2026-01-03 20:38:21 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Business rule not followed: Business rule violated
+2026-01-03 20:38:21 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain validation error: Validation error message
+2026-01-03 20:38:21 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Duplicate identification: A customer with the identification already exists: 1234567890
+2026-01-03 20:38:21 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Internal Server Error: Unexpected error
+java.lang.Exception: Unexpected error
+	at com.brigeth.infraestructure.adapter.input.rest.exception.GlobalExceptionHandlerTest.shouldHandleGenericException(GlobalExceptionHandlerTest.java:206)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:135)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:104)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:194)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2026-01-03 20:38:21 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain error: Domain error
+2026-01-03 20:38:21 WARN  c.b.i.a.o.p.CustomerPersistenceAdapter - Client not found in database: 252efb0a-8cc5-4aa9-8271-f061569122de
+2026-01-03 20:38:24 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-03 20:38:24 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-03 20:44:51 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 20:44:51 INFO  c.b.a.ApiCustomerApplicationTests - Starting ApiCustomerApplicationTests using Java 17.0.12 with PID 4388 (started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 20:44:51 INFO  c.b.a.ApiCustomerApplicationTests - The following 1 profile is active: "local"
+2026-01-03 20:44:55 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 20:44:55 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:59140215-f20f-41a0-80d6-c7888434f6e8 user=SA
+2026-01-03 20:44:55 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 20:44:56 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 20:44:56 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 20:44:56 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 20:44:56 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 20:44:58 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 20:45:00 INFO  c.b.a.ApiCustomerApplicationTests - Started ApiCustomerApplicationTests in 10.035 seconds (process running for 16.737)
+2026-01-03 20:45:00 WARN  c.b.a.s.impl.ValidationServiceImpl - Customer not found: f9606adb-db35-4cc3-b698-16f5f70e1fc1
+2026-01-03 20:45:00 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 20:45:00 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 0987654321
+2026-01-03 20:45:00 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 20:45:00 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to update client: 5092c5ad-4ab2-44ae-8fc9-2772fd2a8d59
+2026-01-03 20:45:00 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Client successfully updated: 5092c5ad-4ab2-44ae-8fc9-2772fd2a8d59
+2026-01-03 20:45:00 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: fac91abf-10d8-4b29-8e29-26d6ba3b805e
+2026-01-03 20:45:00 ERROR c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Error searching for client: Customer not found: fac91abf-10d8-4b29-8e29-26d6ba3b805e
+2026-01-03 20:45:00 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para eliminar cliente: 72ce8131-8d22-4c9b-9604-8bd6d3bcbbc9
+2026-01-03 20:45:00 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente eliminado exitosamente: 72ce8131-8d22-4c9b-9604-8bd6d3bcbbc9
+2026-01-03 20:45:00 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 5213ae67-0dab-42f1-bf4a-a16b8289b7b7
+2026-01-03 20:45:00 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Customer found: 5213ae67-0dab-42f1-bf4a-a16b8289b7b7
+2026-01-03 20:45:00 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para obtener todos los clientes
+2026-01-03 20:45:00 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Lista de clientes recuperada exitosamente
+2026-01-03 20:45:00 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para crear nuevo cliente
+2026-01-03 20:45:00 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente creado exitosamente: 4a97281c-c4be-47be-b115-f3feaef9459a
+2026-01-03 20:45:00 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Customer not found: Customer not found: 123
+2026-01-03 20:45:00 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Invalid argument: Invalid argument
+2026-01-03 20:45:01 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Input validation errors: name: Name is required, email: Email is invalid
+2026-01-03 20:45:01 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Business rule not followed: Business rule violated
+2026-01-03 20:45:01 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain validation error: Validation error message
+2026-01-03 20:45:01 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Duplicate identification: A customer with the identification already exists: 1234567890
+2026-01-03 20:45:01 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Internal Server Error: Unexpected error
+java.lang.Exception: Unexpected error
+	at com.brigeth.infraestructure.adapter.input.rest.exception.GlobalExceptionHandlerTest.shouldHandleGenericException(GlobalExceptionHandlerTest.java:206)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:135)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:104)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:194)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2026-01-03 20:45:01 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain error: Domain error
+2026-01-03 20:45:01 WARN  c.b.i.a.o.p.CustomerPersistenceAdapter - Client not found in database: 9a19556a-3418-4eeb-b5ee-6568c8b6c1e4
+2026-01-03 20:45:04 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-03 20:45:04 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-03 21:01:10 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 21:01:10 INFO  c.b.a.ApiCustomerApplicationTests - Starting ApiCustomerApplicationTests using Java 17.0.12 with PID 23688 (started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 21:01:10 INFO  c.b.a.ApiCustomerApplicationTests - The following 1 profile is active: "local"
+2026-01-03 21:01:13 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 21:01:14 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:3683897b-9208-4daa-87b0-29cd49358f4f user=SA
+2026-01-03 21:01:14 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 21:01:14 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 21:01:14 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 21:01:14 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 21:01:15 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 21:01:17 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 21:01:19 INFO  c.b.a.ApiCustomerApplicationTests - Started ApiCustomerApplicationTests in 9.897 seconds (process running for 16.739)
+2026-01-03 21:01:19 WARN  c.b.a.s.impl.ValidationServiceImpl - Customer not found: a123cc14-5f22-46bd-8087-ce23425e585f
+2026-01-03 21:01:19 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 21:01:19 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 0987654321
+2026-01-03 21:01:19 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 21:01:19 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to update client: 79620578-a611-41a8-a404-03a5db7e7bd5
+2026-01-03 21:01:19 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Client successfully updated: 79620578-a611-41a8-a404-03a5db7e7bd5
+2026-01-03 21:01:19 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: bf77cd35-8432-4aee-b6c7-58ee9f56db45
+2026-01-03 21:01:19 ERROR c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Error searching for client: Customer not found: bf77cd35-8432-4aee-b6c7-58ee9f56db45
+2026-01-03 21:01:19 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para eliminar cliente: bd05afd1-6444-4b6a-87b4-dbf355539fa2
+2026-01-03 21:01:19 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente eliminado exitosamente: bd05afd1-6444-4b6a-87b4-dbf355539fa2
+2026-01-03 21:01:19 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 2fcb3a2d-6b07-4540-8cb9-505067640f34
+2026-01-03 21:01:19 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Customer found: 2fcb3a2d-6b07-4540-8cb9-505067640f34
+2026-01-03 21:01:19 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para obtener todos los clientes
+2026-01-03 21:01:19 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Lista de clientes recuperada exitosamente
+2026-01-03 21:01:19 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para crear nuevo cliente
+2026-01-03 21:01:19 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente creado exitosamente: 4737c336-6636-4bcf-a086-8559249ff143
+2026-01-03 21:01:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Customer not found: Customer not found: 123
+2026-01-03 21:01:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Invalid argument: Invalid argument
+2026-01-03 21:01:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Input validation errors: name: Name is required, email: Email is invalid
+2026-01-03 21:01:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Business rule not followed: Business rule violated
+2026-01-03 21:01:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain validation error: Validation error message
+2026-01-03 21:01:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Duplicate identification: A customer with the identification already exists: 1234567890
+2026-01-03 21:01:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Internal Server Error: Unexpected error
+java.lang.Exception: Unexpected error
+	at com.brigeth.infraestructure.adapter.input.rest.exception.GlobalExceptionHandlerTest.shouldHandleGenericException(GlobalExceptionHandlerTest.java:206)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:135)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:104)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:194)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2026-01-03 21:01:19 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain error: Domain error
+2026-01-03 21:01:20 WARN  c.b.i.a.o.p.CustomerPersistenceAdapter - Client not found in database: 7fbeb815-d58b-4ec8-9a1d-728e6218aadd
+2026-01-03 21:01:22 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-03 21:01:22 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-03 21:02:04 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 21:02:04 INFO  c.b.a.ApiCustomerApplicationTests - Starting ApiCustomerApplicationTests using Java 17.0.12 with PID 14348 (started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 21:02:04 INFO  c.b.a.ApiCustomerApplicationTests - The following 1 profile is active: "local"
+2026-01-03 21:02:09 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 21:02:10 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:018cefe5-5feb-4957-ac0a-e421427841de user=SA
+2026-01-03 21:02:10 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 21:02:11 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 21:02:11 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 21:02:11 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 21:02:12 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 21:02:14 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 21:02:16 INFO  c.b.a.ApiCustomerApplicationTests - Started ApiCustomerApplicationTests in 13.447 seconds (process running for 16.969)
+2026-01-03 21:02:16 INFO  c.b.a.s.impl.CustomerServiceImpl - Updating customer: 0c84098b-3169-4cd0-a2ab-812d58f4e447
+2026-01-03 21:02:16 INFO  c.b.a.s.impl.CustomerServiceImpl - Customer updated successfully: 0c84098b-3169-4cd0-a2ab-812d58f4e447
+2026-01-03 21:02:16 INFO  c.b.a.s.impl.CustomerServiceImpl - Deleting customer: e75c590a-8233-4b1f-9144-1da2072f3cd6
+2026-01-03 21:02:16 INFO  c.b.a.s.impl.CustomerServiceImpl - Customer deleted successfully: e75c590a-8233-4b1f-9144-1da2072f3cd6
+2026-01-03 21:02:16 INFO  c.b.a.s.impl.CustomerServiceImpl - Searching for customer: 1cd87ef4-3824-42bb-bfa7-9a4e8d49c9d4
+2026-01-03 21:02:16 INFO  c.b.a.s.impl.CustomerServiceImpl - Searching for customer: 6623ff0f-c9b9-41aa-ad94-d60649c0a631
+2026-01-03 21:02:16 WARN  c.b.a.s.impl.CustomerServiceImpl - Customer not found: 6623ff0f-c9b9-41aa-ad94-d60649c0a631
+2026-01-03 21:02:16 INFO  c.b.a.s.impl.CustomerServiceImpl - Creating a client with identification: 1234567890
+2026-01-03 21:02:16 INFO  c.b.a.s.impl.CustomerServiceImpl - Creating a client with identification: 1234567890
+2026-01-03 21:02:16 INFO  c.b.a.s.impl.CustomerServiceImpl - Client created successfully: 9ce9dce6-eb39-4158-979b-c3c3ce222f1a
+2026-01-03 21:02:16 WARN  c.b.a.s.impl.ValidationServiceImpl - Customer not found: 225ace82-f176-4195-8ab7-d67f954fd00f
+2026-01-03 21:02:16 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 21:02:16 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 0987654321
+2026-01-03 21:02:16 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 21:02:17 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to update client: 3e8e1991-c5a5-4a1e-b44a-3272fa0a7ad9
+2026-01-03 21:02:17 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Client successfully updated: 3e8e1991-c5a5-4a1e-b44a-3272fa0a7ad9
+2026-01-03 21:02:17 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 6bac6b8f-4a8a-4a85-9207-513a1f253fb9
+2026-01-03 21:02:17 ERROR c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Error searching for client: Customer not found: 6bac6b8f-4a8a-4a85-9207-513a1f253fb9
+2026-01-03 21:02:17 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para eliminar cliente: 60a7ae7b-8ce7-4e6d-a7d4-99c176428e58
+2026-01-03 21:02:17 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente eliminado exitosamente: 60a7ae7b-8ce7-4e6d-a7d4-99c176428e58
+2026-01-03 21:02:17 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 3d026d20-a4f4-408b-af6d-5845b1e63664
+2026-01-03 21:02:17 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Customer found: 3d026d20-a4f4-408b-af6d-5845b1e63664
+2026-01-03 21:02:17 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para obtener todos los clientes
+2026-01-03 21:02:17 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Lista de clientes recuperada exitosamente
+2026-01-03 21:02:17 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para crear nuevo cliente
+2026-01-03 21:02:17 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente creado exitosamente: 7d7b3ea8-27c9-47a9-ae38-155f888ac8f9
+2026-01-03 21:02:17 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Customer not found: Customer not found: 123
+2026-01-03 21:02:17 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Invalid argument: Invalid argument
+2026-01-03 21:02:17 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Input validation errors: name: Name is required, email: Email is invalid
+2026-01-03 21:02:17 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Business rule not followed: Business rule violated
+2026-01-03 21:02:17 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain validation error: Validation error message
+2026-01-03 21:02:17 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Duplicate identification: A customer with the identification already exists: 1234567890
+2026-01-03 21:02:17 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Internal Server Error: Unexpected error
+java.lang.Exception: Unexpected error
+	at com.brigeth.infraestructure.adapter.input.rest.exception.GlobalExceptionHandlerTest.shouldHandleGenericException(GlobalExceptionHandlerTest.java:206)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:135)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:104)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:194)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2026-01-03 21:02:17 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain error: Domain error
+2026-01-03 21:02:17 WARN  c.b.i.a.o.p.CustomerPersistenceAdapter - Client not found in database: 51ca1aa4-3af7-4f96-8bda-fc7931318b7a
+2026-01-03 21:02:20 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-03 21:02:20 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-03 21:02:32 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 21:02:32 INFO  com.brigeth.ApiCustomerApplication - Starting ApiCustomerApplication using Java 17.0.12 with PID 5328 (C:\Users\btoapana\Downloads\Challenge\api-customer\build\classes\java\main started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 21:02:32 INFO  com.brigeth.ApiCustomerApplication - The following 1 profile is active: "local"
+2026-01-03 21:02:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 21:02:34 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:9a1fc229-847c-45d5-930e-1a68d74b9ac4 user=SA
+2026-01-03 21:02:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 21:02:34 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 21:02:34 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 21:02:34 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 21:02:35 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 21:02:36 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 21:02:40 WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-01-03 21:02:40 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-03 21:02:40 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-03 21:02:40 ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 1020 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 1020 or configure this application to listen on another port.
+
+2026-01-03 21:03:24 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 21:03:24 INFO  c.b.a.ApiCustomerApplicationTests - Starting ApiCustomerApplicationTests using Java 17.0.12 with PID 21444 (started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 21:03:24 INFO  c.b.a.ApiCustomerApplicationTests - The following 1 profile is active: "local"
+2026-01-03 21:03:30 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 21:03:31 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:352d9804-9851-42c1-b7c6-911cb548846a user=SA
+2026-01-03 21:03:31 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 21:03:31 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 21:03:31 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 21:03:31 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 21:03:32 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 21:03:34 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 21:03:36 INFO  c.b.a.ApiCustomerApplicationTests - Started ApiCustomerApplicationTests in 13.576 seconds (process running for 17.25)
+2026-01-03 21:03:37 INFO  c.b.a.s.impl.CustomerServiceImpl - Updating customer: 902e58eb-22d8-431e-97ea-ef319391eff6
+2026-01-03 21:03:37 INFO  c.b.a.s.impl.CustomerServiceImpl - Customer updated successfully: 902e58eb-22d8-431e-97ea-ef319391eff6
+2026-01-03 21:03:37 INFO  c.b.a.s.impl.CustomerServiceImpl - Deleting customer: 5af2f654-5ab7-4e85-96a5-eed95d6e3a33
+2026-01-03 21:03:37 INFO  c.b.a.s.impl.CustomerServiceImpl - Customer deleted successfully: 5af2f654-5ab7-4e85-96a5-eed95d6e3a33
+2026-01-03 21:03:37 INFO  c.b.a.s.impl.CustomerServiceImpl - Searching for customer: ec71acb3-d673-4122-988a-5aa210ca9cea
+2026-01-03 21:03:37 INFO  c.b.a.s.impl.CustomerServiceImpl - Searching for customer: 501612cd-ce36-4e3e-8664-594f0bb46eda
+2026-01-03 21:03:37 WARN  c.b.a.s.impl.CustomerServiceImpl - Customer not found: 501612cd-ce36-4e3e-8664-594f0bb46eda
+2026-01-03 21:03:37 INFO  c.b.a.s.impl.CustomerServiceImpl - Creating a client with identification: 1234567890
+2026-01-03 21:03:37 INFO  c.b.a.s.impl.CustomerServiceImpl - Creating a client with identification: 1234567890
+2026-01-03 21:03:37 INFO  c.b.a.s.impl.CustomerServiceImpl - Client created successfully: 0ab55e2c-9b5e-4b3b-b8a1-3e201c2cde7d
+2026-01-03 21:03:37 WARN  c.b.a.s.impl.ValidationServiceImpl - Customer not found: 261808dd-b0a1-4fe4-b295-891a939f486a
+2026-01-03 21:03:37 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 21:03:37 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 0987654321
+2026-01-03 21:03:37 WARN  c.b.a.s.impl.ValidationServiceImpl - Duplicate identification: 1234567890
+2026-01-03 21:03:37 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to update client: 433c18b3-0661-426e-bdaa-ed3347bf38d4
+2026-01-03 21:03:37 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Client successfully updated: 433c18b3-0661-426e-bdaa-ed3347bf38d4
+2026-01-03 21:03:37 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 63f7a4ce-7cb2-4d48-8d3a-30fa2018de24
+2026-01-03 21:03:37 ERROR c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Error searching for client: Customer not found: 63f7a4ce-7cb2-4d48-8d3a-30fa2018de24
+2026-01-03 21:03:37 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para eliminar cliente: 14a998cc-ab99-4f23-ac76-64cbea1b9c8c
+2026-01-03 21:03:37 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente eliminado exitosamente: 14a998cc-ab99-4f23-ac76-64cbea1b9c8c
+2026-01-03 21:03:37 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 3e63cb1f-1b79-4459-9f79-187075be144e
+2026-01-03 21:03:37 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Customer found: 3e63cb1f-1b79-4459-9f79-187075be144e
+2026-01-03 21:03:37 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para obtener todos los clientes
+2026-01-03 21:03:37 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Lista de clientes recuperada exitosamente
+2026-01-03 21:03:37 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para crear nuevo cliente
+2026-01-03 21:03:37 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente creado exitosamente: 191a914c-1a0d-4880-abfa-c7497ca316f5
+2026-01-03 21:03:37 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Customer not found: Customer not found: 123
+2026-01-03 21:03:37 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Invalid argument: Invalid argument
+2026-01-03 21:03:37 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Input validation errors: name: Name is required, email: Email is invalid
+2026-01-03 21:03:37 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Business rule not followed: Business rule violated
+2026-01-03 21:03:37 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain validation error: Validation error message
+2026-01-03 21:03:37 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Duplicate identification: A customer with the identification already exists: 1234567890
+2026-01-03 21:03:37 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Internal Server Error: Unexpected error
+java.lang.Exception: Unexpected error
+	at com.brigeth.infraestructure.adapter.input.rest.exception.GlobalExceptionHandlerTest.shouldHandleGenericException(GlobalExceptionHandlerTest.java:206)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:135)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:110)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:104)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:194)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2026-01-03 21:03:37 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain error: Domain error
+2026-01-03 21:03:38 WARN  c.b.i.a.o.p.CustomerPersistenceAdapter - Client not found in database: 798d7bf9-b120-4402-9df7-037f3004cb50
+2026-01-03 21:03:40 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-03 21:03:40 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-03 21:08:12 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 21:08:12 INFO  com.brigeth.ApiCustomerApplication - Starting ApiCustomerApplication using Java 17.0.12 with PID 29988 (C:\Users\btoapana\Downloads\Challenge\api-customer\build\classes\java\main started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 21:08:12 INFO  com.brigeth.ApiCustomerApplication - The following 1 profile is active: "local"
+2026-01-03 21:08:14 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 21:08:14 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:3c596fda-5ac6-4275-a609-1bf53a5baf20 user=SA
+2026-01-03 21:08:14 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 21:08:14 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 21:08:15 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 21:08:15 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 21:08:15 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 21:08:16 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 21:08:17 INFO  com.brigeth.ApiCustomerApplication - Started ApiCustomerApplication in 5.429 seconds (process running for 6.103)
+2026-01-03 21:27:22 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-01-03 21:27:22 INFO  com.brigeth.ApiCustomerApplication - Starting ApiCustomerApplication using Java 17.0.12 with PID 3024 (C:\Users\btoapana\Downloads\Challenge\api-customer\build\classes\java\main started by btoapana in C:\Users\btoapana\Downloads\Challenge\api-customer)
+2026-01-03 21:27:22 INFO  com.brigeth.ApiCustomerApplication - The following 1 profile is active: "local"
+2026-01-03 21:27:25 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 21:27:25 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:49be73e1-9452-4a98-a3c0-56166d7efd07 user=SA
+2026-01-03 21:27:25 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 21:27:25 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 21:27:25 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2026-01-03 21:27:25 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 21:27:26 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 21:27:28 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 21:27:30 INFO  com.brigeth.ApiCustomerApplication - Started ApiCustomerApplication in 8.778 seconds (process running for 9.789)
+2026-01-03 21:30:03 INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 682 ms
+2026-01-03 21:30:25 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para obtener todos los clientes
+2026-01-03 21:30:26 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Lista de clientes recuperada exitosamente
+2026-01-03 21:30:42 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para crear nuevo cliente
+2026-01-03 21:30:42 INFO  c.b.a.s.impl.CustomerServiceImpl - Creating a client with identification: 1752244756
+2026-01-03 21:30:42 INFO  c.b.a.s.impl.CustomerServiceImpl - Client created successfully: 5e556806-ea89-4fa1-b19e-9200741fe56a
+2026-01-03 21:30:42 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente creado exitosamente: 5e556806-ea89-4fa1-b19e-9200741fe56a
+2026-01-03 21:30:58 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para crear nuevo cliente
+2026-01-03 21:30:58 INFO  c.b.a.s.impl.CustomerServiceImpl - Creating a client with identification: 1752244757
+2026-01-03 21:30:58 ERROR c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Error al crear cliente: The name must contain at least a first and last name.
+2026-01-03 21:30:58 ERROR c.b.i.a.i.r.e.GlobalExceptionHandler - Domain validation error: The name must contain at least a first and last name.
+2026-01-03 21:31:08 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para crear nuevo cliente
+2026-01-03 21:31:08 INFO  c.b.a.s.impl.CustomerServiceImpl - Creating a client with identification: 1752244757
+2026-01-03 21:31:08 INFO  c.b.a.s.impl.CustomerServiceImpl - Client created successfully: 3677eb8e-2471-447c-80db-43069de931c8
+2026-01-03 21:31:08 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente creado exitosamente: 3677eb8e-2471-447c-80db-43069de931c8
+2026-01-03 21:31:18 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para obtener todos los clientes
+2026-01-03 21:31:18 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Lista de clientes recuperada exitosamente
+2026-01-03 21:32:10 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to find a client: 3677eb8e-2471-447c-80db-43069de931c8
+2026-01-03 21:32:10 INFO  c.b.a.s.impl.CustomerServiceImpl - Searching for customer: 3677eb8e-2471-447c-80db-43069de931c8
+2026-01-03 21:32:10 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Customer found: 3677eb8e-2471-447c-80db-43069de931c8
+2026-01-03 21:32:58 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Request to update client: 3677eb8e-2471-447c-80db-43069de931c8
+2026-01-03 21:32:58 INFO  c.b.a.s.impl.CustomerServiceImpl - Updating customer: 3677eb8e-2471-447c-80db-43069de931c8
+2026-01-03 21:32:58 INFO  c.b.a.s.impl.CustomerServiceImpl - Customer updated successfully: 3677eb8e-2471-447c-80db-43069de931c8
+2026-01-03 21:32:58 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Client successfully updated: 3677eb8e-2471-447c-80db-43069de931c8
+2026-01-03 21:33:13 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para eliminar cliente: 3677eb8e-2471-447c-80db-43069de931c8
+2026-01-03 21:33:13 INFO  c.b.a.s.impl.CustomerServiceImpl - Deleting customer: 3677eb8e-2471-447c-80db-43069de931c8
+2026-01-03 21:33:13 INFO  c.b.a.s.impl.CustomerServiceImpl - Customer deleted successfully: 3677eb8e-2471-447c-80db-43069de931c8
+2026-01-03 21:33:13 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Cliente eliminado exitosamente: 3677eb8e-2471-447c-80db-43069de931c8
+2026-01-03 21:33:24 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Solicitud para obtener todos los clientes
+2026-01-03 21:33:24 INFO  c.b.i.a.i.r.CustomerRestControllerAdapter - [REST] Lista de clientes recuperada exitosamente

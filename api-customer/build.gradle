@@ -86,19 +86,44 @@ jacocoTestReport {
         html.required = true
         csv.required = false
     }
+    
+    classDirectories.setFrom(files(classDirectories.files.collect {
+        fileTree(dir: it, exclude: [
+            '**/customer/infrastructure/adapter/input/rest/model/**',
+            '**/customer/infrastructure/adapter/input/rest/*Api.class',
+            '**/ApiCustomerApplication.class',
+            '**/entity/**',
+            '**/enums/**',
+            '**/exception/**'
+        ])
+    }))
 }
 
 jacocoTestCoverageVerification {
+    dependsOn jacocoTestReport
+    
+    classDirectories.setFrom(files(classDirectories.files.collect {
+        fileTree(dir: it, exclude: [
+            '**/customer/infrastructure/adapter/input/rest/model/**',
+            '**/customer/infrastructure/adapter/input/rest/*Api.class',
+            '**/ApiCustomerApplication.class',
+            '**/entity/**',
+            '**/enums/**',
+            '**/exception/**'
+        ])
+    }))
+    
     violationRules {
         rule {
             limit {
-                minimum = 0.20  // Reducido para permitir deployment
+                minimum = 0.80
             }
         }
     }
 }
 
-// Deshabilitado temporalmente para permitir deployment con tests comentados
-// check.dependsOn jacocoTestCoverageVerification
+check.dependsOn jacocoTestCoverageVerification
+
+
 
 

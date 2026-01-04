@@ -32,11 +32,11 @@ public class CustomerPersistenceAdapter implements CustomerPersistencePort {
 
     @Override
     public Mono<Customer> getCustomerById(String customerId) {
-        log.debug("Consultando BD para cliente: {}", customerId);
+        log.debug("Querying database for client: {}", customerId);
         return Mono.fromCallable(() -> {
             CustomerEntity customerEntity = customerJpaRepository.findById(customerId)
                     .orElseThrow(() -> {
-                        log.warn("Cliente no encontrado en BD: {}", customerId);
+                        log.warn("Client not found in database: {}", customerId);
                         return new CustomerNotFoundException(customerId);
                     });
             return customerPersistenceMapper.toDomain(customerEntity);
@@ -45,14 +45,14 @@ public class CustomerPersistenceAdapter implements CustomerPersistencePort {
 
     @Override
     public Mono<Customer> saveCustomer(Customer customer) {
-        log.debug("Guardando en base de datos: {}", customer.getIdentification());
+        log.debug("Saving to database: {}", customer.getIdentification());
         return Mono.fromCallable(() -> {
             CustomerEntity customerEntity = customerPersistenceMapper.toEntity(customer);
             CustomerEntity savedEntity = customerJpaRepository.save(customerEntity);
             return customerPersistenceMapper.toDomain(savedEntity);
         })
-        .doOnSuccess(c -> log.debug("Cliente guardado en BD: {}", c.getPersonId()))
-        .doOnError(e -> log.error("Error en base de datos al guardar: {}", e.getMessage()))
+        .doOnSuccess(c -> log.debug("Client saved in database: {}", c.getPersonId()))
+        .doOnError(e -> log.error("Database error while saving: {}", e.getMessage()))
         .subscribeOn(Schedulers.boundedElastic());
     }
 

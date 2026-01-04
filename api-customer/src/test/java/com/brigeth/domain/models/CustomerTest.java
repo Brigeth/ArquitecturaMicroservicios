@@ -12,11 +12,11 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Customer - Pruebas Unitarias")
+@DisplayName("Customer - Unit Tests")
 class CustomerTest {
 
     @Test
-    @DisplayName("Debe crear un cliente válido")
+    @DisplayName("You must create a valid client")
     void shouldCreateValidCustomer() {
         Customer customer = Customer.builder()
                 .personId(UUID.randomUUID())
@@ -35,7 +35,7 @@ class CustomerTest {
     }
 
     @Test
-    @DisplayName("Debe normalizar y validar un cliente correctamente")
+    @DisplayName("You must normalize and validate a client correctly")
     void shouldNormalizeAndValidateCustomer() {
         Customer customer = Customer.builder()
                 .name("  juan   perez  ")
@@ -58,7 +58,7 @@ class CustomerTest {
     }
 
     @Test
-    @DisplayName("Debe validar contraseña con longitud mínima")
+    @DisplayName("You must validate password with minimum length")
     void shouldValidatePasswordMinimumLength() {
 
         Customer customer = Customer.builder()
@@ -73,11 +73,11 @@ class CustomerTest {
 
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
-        assertEquals("La contraseña debe tener al menos 8 caracteres", exception.getMessage());
+        assertEquals("The password must be at least 8 characters long", exception.getMessage());
     }
 
     @Test
-    @DisplayName("Debe validar contraseña con longitud máxima")
+    @DisplayName("You must validate the password with the maximum length.")
     void shouldValidatePasswordMaximumLength() {
         Customer customer = Customer.builder()
                 .name("Juan Perez")
@@ -91,11 +91,11 @@ class CustomerTest {
 
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
-        assertEquals("La contraseña no puede exceder 20 caracteres", exception.getMessage());
+        assertEquals("The password cannot exceed 20 characters", exception.getMessage());
     }
 
     @Test
-    @DisplayName("Debe validar que la contraseña contenga al menos una mayúscula")
+    @DisplayName("You must validate that the password contains at least one uppercase letter")
     void shouldValidatePasswordContainsUppercase() {
         Customer customer = Customer.builder()
                 .name("Juan Perez")
@@ -109,11 +109,11 @@ class CustomerTest {
 
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
-        assertEquals("La contraseña debe contener al menos una letra mayúscula", exception.getMessage());
+        assertEquals("The password must contain at least one uppercase letter", exception.getMessage());
     }
 
     @Test
-    @DisplayName("Debe validar que la contraseña contenga al menos una minúscula")
+    @DisplayName("Should validate that password contains at least one lowercase letter")
     void shouldValidatePasswordContainsLowercase() {
         Customer customer = Customer.builder()
                 .name("Juan Perez")
@@ -127,11 +127,11 @@ class CustomerTest {
 
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
-        assertEquals("La contraseña debe contener al menos una letra minúscula", exception.getMessage());
+        assertEquals("The password must contain at least one lowercase letter", exception.getMessage());
     }
 
     @Test
-    @DisplayName("Debe validar que la contraseña contenga al menos un número")
+    @DisplayName("Should validate that password contains at least one number")
     void shouldValidatePasswordContainsNumber() {
         Customer customer = Customer.builder()
                 .name("Juan Perez")
@@ -145,13 +145,13 @@ class CustomerTest {
 
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
-        assertEquals("La contraseña debe contener al menos un número", exception.getMessage());
+        assertEquals("The password must contain at least one number", exception.getMessage());
     }
 
     @ParameterizedTest
     @NullAndEmptySource
     @ValueSource(strings = {"  ", "\t", "\n"})
-    @DisplayName("Debe validar que la contraseña no sea nula o vacía")
+    @DisplayName("Should validate that password is not null or blank")
     void shouldValidatePasswordNotNullOrBlank(String password) {
         Customer customer = Customer.builder()
                 .name("Juan Perez")
@@ -165,11 +165,11 @@ class CustomerTest {
 
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
-        assertEquals("La contraseña es obligatoria", exception.getMessage());
+        assertEquals("A password is required.", exception.getMessage());
     }
 
     @Test
-    @DisplayName("Debe validar que el estado no sea nulo")
+    @DisplayName("Should validate that state is not null")
     void shouldValidateStateNotNull() {
         Customer customer = Customer.builder()
                 .name("Juan Perez")
@@ -183,11 +183,11 @@ class CustomerTest {
 
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
-        assertEquals("El estado es obligatorio", exception.getMessage());
+        assertEquals("The state is mandatory", exception.getMessage());
     }
 
     @Test
-    @DisplayName("Debe validar estado como true")
+    @DisplayName("Should validate state as true")
     void shouldValidateStateAsTrue() {
         Customer customer = Customer.builder()
                 .name("Juan Perez")
@@ -204,7 +204,7 @@ class CustomerTest {
     }
 
     @Test
-    @DisplayName("Debe validar estado como false")
+    @DisplayName("Should validate state as false")
     void shouldValidateStateAsFalse() {
 
         Customer customer = Customer.builder()
@@ -222,7 +222,7 @@ class CustomerTest {
     }
 
     @Test
-    @DisplayName("Debe usar builder correctamente")
+    @DisplayName("Should use builder correctly")
     void shouldUseBuilderCorrectly() {
 
         UUID id = UUID.randomUUID();
@@ -247,7 +247,7 @@ class CustomerTest {
     }
 
     @Test
-    @DisplayName("Debe usar toBuilder correctamente")
+    @DisplayName("Should use toBuilder correctly")
     void shouldUseToBuilderCorrectly() {
 
         Customer original = Customer.builder()
@@ -273,7 +273,7 @@ class CustomerTest {
     }
 
     @Test
-    @DisplayName("Debe validar todos los campos heredados de Person")
+    @DisplayName("Should validate all fields inherited from Person")
     void shouldValidateAllFieldsFromPerson() {
 
         Customer customer = Customer.builder()
@@ -289,11 +289,11 @@ class CustomerTest {
 
         ValidationException exception = assertThrows(ValidationException.class, 
                 customer::normalizeAndValidate);
-        assertEquals("El nombre debe contener al menos nombre y apellido", exception.getMessage());
+        assertEquals("The name must contain at least a first and last name.", exception.getMessage());
     }
 
     @Test
-    @DisplayName("Debe aceptar contraseña válida en el límite inferior")
+    @DisplayName("Should accept valid password at minimum boundary")
     void shouldAcceptPasswordAtMinimumBoundary() {
 
         Customer customer = Customer.builder()
@@ -311,7 +311,7 @@ class CustomerTest {
     }
 
     @Test
-    @DisplayName("Debe aceptar contraseña válida en el límite superior")
+    @DisplayName("Should accept valid password at maximum boundary")
     void shouldAcceptPasswordAtMaximumBoundary() {
 
         Customer customer = Customer.builder()

@@ -20,12 +20,13 @@ import reactor.test.StepVerifier;
 
 import java.util.UUID;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-@DisplayName("CustomerServiceImpl - Pruebas Unitarias")
+@DisplayName("CustomerServiceImpl - Unit Tests")
 class CustomerServiceImplTest {
 
     @Mock
@@ -54,7 +55,7 @@ class CustomerServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe crear un cliente exitosamente")
+    @DisplayName("You must successfully create a customer")
     void shouldCreateCustomerSuccessfully() {
 
         when(validationService.validateUniqueIdentification(anyString(), any()))
@@ -73,11 +74,11 @@ class CustomerServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe fallar al crear cliente con datos inválidos")
+    @DisplayName("It should fail to create a client with invalid data")
     void shouldFailWhenCreatingCustomerWithInvalidData() {
-        // Given
+
         Customer invalidCustomer = Customer.builder()
-                .name("J")  // Nombre muy corto
+                .name("J")  // Name too short
                 .gender(GenderType.M)
                 .identification("1234567890")
                 .address("Calle Principal 123")
@@ -86,16 +87,17 @@ class CustomerServiceImplTest {
                 .state(true)
                 .build();
 
-        StepVerifier.create(customerService.createCustomer(invalidCustomer))
-                .verifyError(ValidationException.class);
+        assertThrows(ValidationException.class, () -> {
+            customerService.createCustomer(invalidCustomer);
+        });
 
         verify(validationService, never()).validateUniqueIdentification(anyString(), any());
         verify(customerPersistencePort, never()).saveCustomer(any(Customer.class));
     }
-    */
+
 
     @Test
-    @DisplayName("Debe obtener todos los clientes exitosamente")
+    @DisplayName("You must successfully acquire all customers.")
     void shouldGetAllCustomersSuccessfully() {
         Customer customer2 = Customer.builder()
                 .personId(UUID.randomUUID())
@@ -120,7 +122,7 @@ class CustomerServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe obtener lista vacía cuando no hay clientes")
+    @DisplayName("You should get an empty list when there are no customers.")
     void shouldGetEmptyListWhenNoCustomers() {
         when(customerPersistencePort.getAllCustomers())
                 .thenReturn(Flux.empty());
@@ -132,7 +134,7 @@ class CustomerServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe obtener un cliente por ID exitosamente")
+        @DisplayName("You must successfully acquire a client by ID")
     void shouldGetCustomerByIdSuccessfully() {
         String customerId = testCustomer.getPersonId().toString();
         when(customerPersistencePort.getCustomerById(customerId))
@@ -146,7 +148,7 @@ class CustomerServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe fallar al obtener cliente con ID inexistente")
+    @DisplayName("It should fail to obtain a client with a non-existent ID.")
     void shouldFailWhenGettingCustomerWithNonExistentId() {
         String customerId = UUID.randomUUID().toString();
         when(customerPersistencePort.getCustomerById(customerId))
@@ -160,7 +162,7 @@ class CustomerServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe eliminar un cliente exitosamente")
+    @DisplayName("You must successfully delete a customer")
     void shouldDeleteCustomerSuccessfully() {
         String customerId = testCustomer.getPersonId().toString();
         when(validationService.validateCustomerExists(customerId))
@@ -176,7 +178,7 @@ class CustomerServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe actualizar un cliente exitosamente")
+    @DisplayName("You must successfully update a client")
     void shouldUpdateCustomerSuccessfully() {
         // Given
         String customerId = testCustomer.getPersonId().toString();

@@ -2,7 +2,7 @@ services:
   customer-service:
     build: .
     ports:
-      - "8080:8080"
+      - "1020:1020"
     environment:
       - SPRING_PROFILES_ACTIVE=local
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/customerdb
@@ -12,7 +12,7 @@ services:
     depends_on:
       - postgres
     restart: unless-stopped
-  postgres:
+  api-customer:
     image: postgres:16
     environment:
       - POSTGRES_DB=customerdb

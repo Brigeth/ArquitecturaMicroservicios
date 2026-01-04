@@ -22,7 +22,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-@DisplayName("ValidationServiceImpl - Pruebas Unitarias")
+@DisplayName("ValidationServiceImpl - Unit Tests")
 class ValidationServiceImplTest {
 
     @Mock
@@ -60,7 +60,7 @@ class ValidationServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe validar identificación única exitosamente cuando no existe duplicado")
+    @DisplayName("You must successfully validate the unique identification when there is no duplicate.")
     void shouldValidateUniqueIdentificationSuccessfully() {
         String newIdentification = "1111111111";
         when(customerPersistencePort.getAllCustomers())
@@ -73,7 +73,7 @@ class ValidationServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe lanzar excepción cuando la identificación está duplicada")
+    @DisplayName("It should throw an exception when the ID is duplicated.")
     void shouldThrowExceptionWhenIdentificationIsDuplicated() {
         String duplicatedIdentification = "1234567890";
         when(customerPersistencePort.getAllCustomers())
@@ -87,7 +87,7 @@ class ValidationServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe permitir identificación duplicada cuando pertenece al mismo cliente (actualización)")
+        @DisplayName("It must allow duplicate identification when it belongs to the same client (update)")
     void shouldAllowDuplicateIdentificationForSameCustomer() {
         String customerId = testCustomer.getPersonId().toString();
         String identification = testCustomer.getIdentification();
@@ -101,7 +101,7 @@ class ValidationServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe lanzar excepción cuando la identificación está duplicada en otro cliente durante actualización")
+    @DisplayName("You must throw an exception when the ID is duplicated on another client during an update")
     void shouldThrowExceptionWhenIdentificationIsDuplicatedInAnotherCustomer() {
 
         String customerId = testCustomer.getPersonId().toString();
@@ -116,7 +116,7 @@ class ValidationServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe validar identificación única cuando no hay clientes")
+    @DisplayName("You must validate unique identification when there are no customers.")
     void shouldValidateUniqueIdentificationWhenNoCustomersExist() {
         String newIdentification = "1234567890";
         when(customerPersistencePort.getAllCustomers())
@@ -129,7 +129,7 @@ class ValidationServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe validar que el cliente existe exitosamente")
+    @DisplayName("You must successfully validate that the client exists")
     void shouldValidateCustomerExistsSuccessfully() {
         String customerId = testCustomer.getPersonId().toString();
         when(customerPersistencePort.getCustomerById(customerId))
@@ -143,7 +143,7 @@ class ValidationServiceImplTest {
 
 
     @Test
-    @DisplayName("Debe mapear error del repositorio a CustomerNotFoundException")
+    @DisplayName("You must map the repository error to CustomerNotFoundException")
     void shouldMapRepositoryErrorToCustomerNotFoundException() {
         // Given
         String customerId = UUID.randomUUID().toString();
@@ -159,7 +159,7 @@ class ValidationServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe validar múltiples clientes con identificaciones únicas")
+    @DisplayName("You must validate multiple clients with unique IDs")
     void shouldValidateMultipleCustomersWithUniqueIdentifications() {
         String newIdentification1 = "1111111111";
         String newIdentification2 = "2222222222";
@@ -176,7 +176,7 @@ class ValidationServiceImplTest {
     }
 
     @Test
-    @DisplayName("Debe validar correctamente con excludeCustomerId null")
+    @DisplayName("You must validate correctly with excludeCustomerId null")
     void shouldValidateCorrectlyWithNullExcludeCustomerId() {
         String identification = testCustomer.getIdentification();
         when(customerPersistencePort.getAllCustomers())

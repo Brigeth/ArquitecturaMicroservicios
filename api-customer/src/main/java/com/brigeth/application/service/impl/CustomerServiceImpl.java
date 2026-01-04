@@ -21,54 +21,54 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Mono<Customer> createCustomer(Customer customer) {
-        log.info("Creando cliente con identificación: {}", customer.getIdentification());
+        log.info("Creating a client with identification: {}", customer.getIdentification());
         customer.normalizeAndValidate();
         return validationService.validateUniqueIdentification(customer.getIdentification(), null)
             .then(customerPersistencePort.saveCustomer(customer))
-            .doOnSuccess(c -> log.info("Cliente creado exitosamente: {}", c.getPersonId()))
-            .doOnError(e -> log.error("Error al crear cliente: {}", e.getMessage()));
+            .doOnSuccess(c -> log.info("Client created successfully: {}", c.getPersonId()))
+            .doOnError(e -> log.error("Error creating client: {}", e.getMessage()));
     }
 
     @Override
     public Flux<Customer> getCustomers() {
-        log.debug("Obteniendo todos los clientes");
+        log.debug("Getting all the customers");
         return customerPersistencePort.getAllCustomers();
     }
 
     @Override
     public Mono<Customer> getOnlyCustomerById(String customerId) {
-        log.info("Buscando cliente: {}", customerId);
+        log.info("Searching for customer: {}", customerId);
         return customerPersistencePort.getCustomerById(customerId)
-                .doOnSuccess(c -> log.debug("Cliente encontrado: {}", customerId))
-                .doOnError(e -> log.warn("Cliente no encontrado: {}", customerId));
+                .doOnSuccess(c -> log.debug("Customer found: {}", customerId))
+                .doOnError(e -> log.warn("Customer not found: {}", customerId));
     }
 
     @Override
     public Mono<Void> deleteCustomer(String customerId) {
-        log.info("Eliminando cliente: {}", customerId);
+        log.info("Deleting customer: {}", customerId);
         
-        // Validar que el cliente existe antes de eliminar
+        // Validate that the customer exists before deleting
         return validationService.validateCustomerExists(customerId)
             .then(customerPersistencePort.deleteCustomer(customerId))
-            .doOnSuccess(v -> log.info("Cliente eliminado exitosamente: {}", customerId))
-            .doOnError(e -> log.error("Error al eliminar cliente: {}", e.getMessage()));
+            .doOnSuccess(v -> log.info("Customer deleted successfully: {}", customerId))
+            .doOnError(e -> log.error("Error deleting customer: {}", e.getMessage()));
     }
 
     @Override
     public Mono<Customer> updateCustomer(Customer customer) {
-        log.info("Actualizando cliente: {}", customer.getPersonId());
+        log.info("Updating customer: {}", customer.getPersonId());
         
-        // Normalizar y validar el modelo de dominio
-        customer.normalizeAndValidate();
+        // Only validate Person fields (password is not required in updates)
+        customer.validate();
         
-        // Validar que existe y que la identificación es única
+        // Validate that the customer exists and that the identification is unique
         return validationService.validateCustomerExists(customer.getPersonId().toString())
             .then(validationService.validateUniqueIdentification(
                 customer.getIdentification(), 
                 customer.getPersonId().toString()
             ))
             .then(customerPersistencePort.updateCustomer(customer))
-            .doOnSuccess(c -> log.info("Cliente actualizado exitosamente: {}", c.getPersonId()))
-            .doOnError(e -> log.error("Error al actualizar cliente: {}", e.getMessage()));
+            .doOnSuccess(c -> log.info("Customer updated successfully: {}", c.getPersonId()))
+            .doOnError(e -> log.error("Error updating customer: {}", e.getMessage()));
     }
 }

@@ -26,7 +26,7 @@ public class AccountPersistenceAdapter implements AccountPersistencePort {
 
         return Mono.fromCallable(() -> accountJpaRepository.findByAccountNumber(accountNumber))
                 .subscribeOn(Schedulers.boundedElastic())
-                .flatMap(Mono::justOrEmpty)// Si hay Optional.empty, el Mono queda vacío
+                .flatMap(Mono::justOrEmpty)
                 .map(accountMapper::ToDomain);
     }
 
@@ -35,7 +35,7 @@ public class AccountPersistenceAdapter implements AccountPersistencePort {
 
         return Mono.fromCallable(accountJpaRepository::findAll)
                 .subscribeOn(Schedulers.boundedElastic())
-                .flatMapMany(Flux::fromIterable)// Convierte la List<AccountEntity> en un Flux
+                .flatMapMany(Flux::fromIterable)
                 .map(accountMapper::ToDomain);
     }
 

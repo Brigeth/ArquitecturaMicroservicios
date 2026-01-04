@@ -2,6 +2,9 @@ spring:
   application:
     name: api-customer
 
+server:
+  port: 1020
+
   datasource:
     url: jdbc:postgresql://localhost:5432/customerdb
     driver-class-name: org.postgresql.Driver

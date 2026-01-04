@@ -18,23 +18,19 @@ import reactor.core.publisher.Mono;
 import java.time.OffsetDateTime;
 import java.util.stream.Collectors;
 
-/**
- * Manejador global de excepciones para el adaptador REST
- * Alineado con los códigos HTTP definidos en openapi.yaml
- */
+
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
     /**
-     * HTTP 400 - Errores de validación de campos
-     * openapi.yaml: '400' - Datos de entrada inválidos
+     * HTTP 400 - Field validation errors
      */
     @ExceptionHandler(ValidationException.class)
     public Mono<ResponseEntity<ErrorResponse>> handleValidationException(
             ValidationException ex, 
             ServerWebExchange exchange) {
-        log.error("Error de validación de dominio: {}", ex.getMessage());
+        log.error("Domain validation error: {}", ex.getMessage());
         
         ErrorResponse error = buildErrorResponse(
             HttpStatus.BAD_REQUEST,
@@ -47,14 +43,13 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * HTTP 404 - Cliente no encontrado
-     * openapi.yaml: '404' - Cliente no encontrado / Recurso inexistente
+     * HTTP 404 - Customer not found
      */
     @ExceptionHandler(CustomerNotFoundException.class)
     public Mono<ResponseEntity<ErrorResponse>> handleCustomerNotFoundException(
             CustomerNotFoundException ex, 
             ServerWebExchange exchange) {
-        log.error("Cliente no encontrado: {}", ex.getMessage());
+        log.error("Customer not found: {}", ex.getMessage());
         
         ErrorResponse error = buildErrorResponse(
             HttpStatus.NOT_FOUND,
@@ -67,14 +62,13 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * HTTP 409 - Conflicto (identificación duplicada)
-     * openapi.yaml: '409' - El cliente ya existe / Identificación duplicada
+     * HTTP 409 - Conflict (duplicate identification)
      */
     @ExceptionHandler(DuplicateIdentificationException.class)
     public Mono<ResponseEntity<ErrorResponse>> handleDuplicateIdentificationException(
             DuplicateIdentificationException ex, 
             ServerWebExchange exchange) {
-        log.error("Identificación duplicada: {}", ex.getMessage());
+        log.error("Duplicate identification: {}", ex.getMessage());
         
         ErrorResponse error = buildErrorResponse(
             HttpStatus.CONFLICT,
@@ -87,14 +81,13 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * HTTP 422 - Reglas de negocio no cumplidas
-     * openapi.yaml: '422' - Reglas de negocio / Cliente menor de edad
+     * HTTP 422 - Business rules not followed
      */
     @ExceptionHandler(BusinessRuleException.class)
     public Mono<ResponseEntity<ErrorResponse>> handleBusinessRuleException(
             BusinessRuleException ex, 
             ServerWebExchange exchange) {
-        log.error("Regla de negocio no cumplida: {}", ex.getMessage());
+        log.error("Business rule not followed: {}", ex.getMessage());
         
         ErrorResponse error = buildErrorResponse(
             HttpStatus.UNPROCESSABLE_ENTITY,
@@ -107,7 +100,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * HTTP 400 - Errores de validación de entrada (Bean Validation)
+     * HTTP 400 - Input validation errors (Bean Validation)
      */
     @ExceptionHandler(WebExchangeBindException.class)
     public Mono<ResponseEntity<ErrorResponse>> handleWebExchangeBindException(
@@ -120,12 +113,12 @@ public class GlobalExceptionHandler {
             .map(error -> error.getField() + ": " + error.getDefaultMessage())
             .collect(Collectors.joining(", "));
         
-        log.error("Errores de validación de entrada: {}", errors);
+        log.error("Input validation errors: {}", errors);
         
         ErrorResponse error = buildErrorResponse(
             HttpStatus.BAD_REQUEST,
             "VALIDATION_ERROR",
-            "Errores de validación: " + errors,
+            "Validation errors: " + errors,
             exchange.getRequest().getPath().value()
         );
         
@@ -133,13 +126,13 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * HTTP 400 - Argumentos inválidos
+     * HTTP 400 - Invalid arguments
      */
     @ExceptionHandler(IllegalArgumentException.class)
     public Mono<ResponseEntity<ErrorResponse>> handleIllegalArgumentException(
             IllegalArgumentException ex, 
             ServerWebExchange exchange) {
-        log.error("Argumento inválido: {}", ex.getMessage());
+        log.error("Invalid argument: {}", ex.getMessage());
         
         ErrorResponse error = buildErrorResponse(
             HttpStatus.BAD_REQUEST,
@@ -152,13 +145,13 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * HTTP 400 - Otras excepciones de dominio
+     * HTTP 400 - Other domain exceptions
      */
     @ExceptionHandler(DomainException.class)
     public Mono<ResponseEntity<ErrorResponse>> handleDomainException(
             DomainException ex, 
             ServerWebExchange exchange) {
-        log.error("Error de dominio: {}", ex.getMessage());
+        log.error("Domain error: {}", ex.getMessage());
         
         ErrorResponse error = buildErrorResponse(
             HttpStatus.BAD_REQUEST,
@@ -171,19 +164,18 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * HTTP 500 - Error interno del servidor
-     * openapi.yaml: '500' - Error interno del servidor
+     * HTTP 500 - Internal Server Error
      */
     @ExceptionHandler(Exception.class)
     public Mono<ResponseEntity<ErrorResponse>> handleGenericException(
             Exception ex, 
             ServerWebExchange exchange) {
-        log.error("Error interno del servidor: {}", ex.getMessage(), ex);
+        log.error("Internal Server Error: {}", ex.getMessage(), ex);
         
         ErrorResponse error = buildErrorResponse(
             HttpStatus.INTERNAL_SERVER_ERROR,
             "INTERNAL_SERVER_ERROR",
-            "Ha ocurrido un error interno en el servidor",
+            "An internal server error has occurred",
             exchange.getRequest().getPath().value()
         );
         
@@ -191,7 +183,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Construye una respuesta de error estándar según openapi.yaml
+     *Build a standard error response according to openapi.yaml
      */
     private ErrorResponse buildErrorResponse(
             HttpStatus status, 

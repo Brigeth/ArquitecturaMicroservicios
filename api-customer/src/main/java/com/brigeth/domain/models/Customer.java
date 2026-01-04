@@ -29,36 +29,33 @@ public class Customer extends Person {
 
     private void validatePassword(String password) {
         if (password == null || password.isBlank()) {
-            throw new ValidationException("La contraseña es obligatoria");
+            throw new ValidationException("A password is required.");
         }
 
         if (password.length() < 8) {
-            throw new ValidationException("La contraseña debe tener al menos 8 caracteres");
+            throw new ValidationException("The password must be at least 8 characters long");
         }
 
         if (password.length() > 20) {
-            throw new ValidationException("La contraseña no puede exceder 20 caracteres");
+            throw new ValidationException("The password cannot exceed 20 characters");
         }
 
-        // Al menos una mayúscula
         if (!password.matches(".*[A-Z].*")) {
-            throw new ValidationException("La contraseña debe contener al menos una letra mayúscula");
+            throw new ValidationException("The password must contain at least one uppercase letter");
         }
 
-        // Al menos una minúscula
         if (!password.matches(".*[a-z].*")) {
-            throw new ValidationException("La contraseña debe contener al menos una letra minúscula");
+            throw new ValidationException("The password must contain at least one lowercase letter");
         }
 
-        // Al menos un número
         if (!password.matches(".*\\d.*")) {
-            throw new ValidationException("La contraseña debe contener al menos un número");
+            throw new ValidationException("The password must contain at least one number");
         }
     }
 
     private void validateState(Boolean state) {
         if (state == null) {
-            throw new ValidationException("El estado es obligatorio");
+            throw new ValidationException("The state is mandatory");
         }
     }
 }

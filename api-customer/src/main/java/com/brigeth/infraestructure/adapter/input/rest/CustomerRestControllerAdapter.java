@@ -67,13 +67,13 @@ public class CustomerRestControllerAdapter implements CustomersApi {
     public Mono<ResponseEntity<CustomerResponse>> getCustomerById(
             UUID customerId, 
             ServerWebExchange exchange) {
-        log.info("[REST] Solicitud para buscar cliente: {}", customerId);
+        log.info("[REST] Request to find a client: {}", customerId);
         
         return customerService.getOnlyCustomerById(customerId.toString())
                 .map(customerRestMapper::toResponse)
                 .map(ResponseEntity::ok)
-                .doOnSuccess(r -> log.info("[REST] Cliente encontrado: {}", customerId))
-                .doOnError(e -> log.error("[REST] Error al buscar cliente: {}", e.getMessage()));
+                .doOnSuccess(r -> log.info("[REST] Customer found: {}", customerId))
+                .doOnError(e -> log.error("[REST] Error searching for client: {}", e.getMessage()));
     }
 
     @Override
@@ -81,7 +81,7 @@ public class CustomerRestControllerAdapter implements CustomersApi {
             UUID customerId, 
             Mono<UpdateCustomerRequest> updateCustomerRequest, 
             ServerWebExchange exchange) {
-        log.info("[REST] Solicitud para actualizar cliente: {}", customerId);
+        log.info("[REST] Request to update client: {}", customerId);
         
         return updateCustomerRequest
                 .map(customerRestMapper::toUpdateDomain)
@@ -91,7 +91,7 @@ public class CustomerRestControllerAdapter implements CustomersApi {
                 })
                 .map(customerRestMapper::toResponse)
                 .map(ResponseEntity::ok)
-                .doOnSuccess(r -> log.info("[REST] Cliente actualizado exitosamente: {}", customerId))
-                .doOnError(e -> log.error("[REST] Error al actualizar cliente: {}", e.getMessage()));
+                .doOnSuccess(r -> log.info("[REST] Client successfully updated: {}", customerId))
+                .doOnError(e -> log.error("[REST] Error updating client: {}", e.getMessage()));
     }
 }
