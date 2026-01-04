@@ -53,7 +53,7 @@ class CustomerPersistenceAdapterTest {
                 .build();
 
         testCustomerEntity = new CustomerEntity();
-        testCustomerEntity.setId(testCustomer.getPersonId().toString());
+        testCustomerEntity.setId(testCustomer.getPersonId());
         testCustomerEntity.setName(testCustomer.getName());
         testCustomerEntity.setIdentification(testCustomer.getIdentification());
     }
@@ -62,11 +62,11 @@ class CustomerPersistenceAdapterTest {
     @DisplayName("Should get all customers successfully")
     void shouldGetAllCustomersSuccessfully() {
         CustomerEntity entity2 = new CustomerEntity();
-        entity2.setId(UUID.randomUUID().toString());
+        entity2.setId(UUID.randomUUID());
         entity2.setName("Maria Lopez");
         
         Customer customer2 = Customer.builder()
-                .personId(UUID.fromString(entity2.getId()))
+                .personId(entity2.getId())
                 .name("Maria Lopez")
                 .gender(GenderType.F)
                 .identification("0987654321")
@@ -107,14 +107,14 @@ class CustomerPersistenceAdapterTest {
     @DisplayName("Should get customer by id successfully")
     void shouldGetCustomerByIdSuccessfully() {
         String customerId = testCustomer.getPersonId().toString();
-        when(customerJpaRepository.findById(customerId)).thenReturn(Optional.of(testCustomerEntity));
+        when(customerJpaRepository.findById(UUID.fromString(customerId))).thenReturn(Optional.of(testCustomerEntity));
         when(customerPersistenceMapper.toDomain(testCustomerEntity)).thenReturn(testCustomer);
 
         StepVerifier.create(customerPersistenceAdapter.getCustomerById(customerId))
                 .expectNext(testCustomer)
                 .verifyComplete();
 
-        verify(customerJpaRepository, times(1)).findById(customerId);
+        verify(customerJpaRepository, times(1)).findById(UUID.fromString(customerId));
         verify(customerPersistenceMapper, times(1)).toDomain(testCustomerEntity);
     }
 
@@ -122,13 +122,13 @@ class CustomerPersistenceAdapterTest {
     @DisplayName("Should throw CustomerNotFoundException when customer not found")
     void shouldThrowExceptionWhenCustomerNotFound() {
         String customerId = UUID.randomUUID().toString();
-        when(customerJpaRepository.findById(customerId)).thenReturn(Optional.empty());
+        when(customerJpaRepository.findById(UUID.fromString(customerId))).thenReturn(Optional.empty());
 
         StepVerifier.create(customerPersistenceAdapter.getCustomerById(customerId))
                 .expectError(CustomerNotFoundException.class)
                 .verify();
 
-        verify(customerJpaRepository, times(1)).findById(customerId);
+        verify(customerJpaRepository, times(1)).findById(UUID.fromString(customerId));
         verify(customerPersistenceMapper, never()).toDomain(any(CustomerEntity.class));
     }
 
@@ -152,12 +152,12 @@ class CustomerPersistenceAdapterTest {
     @DisplayName("Should delete customer successfully")
     void shouldDeleteCustomerSuccessfully() {
         String customerId = testCustomer.getPersonId().toString();
-        doNothing().when(customerJpaRepository).deleteById(customerId);
+        doNothing().when(customerJpaRepository).deleteById(UUID.fromString(customerId));
 
         StepVerifier.create(customerPersistenceAdapter.deleteCustomer(customerId))
                 .verifyComplete();
 
-        verify(customerJpaRepository, times(1)).deleteById(customerId);
+        verify(customerJpaRepository, times(1)).deleteById(UUID.fromString(customerId));
     }
 
     @Test
@@ -169,7 +169,7 @@ class CustomerPersistenceAdapterTest {
                 .build();
 
         CustomerEntity existingEntity = new CustomerEntity();
-        existingEntity.setId(customerId);
+        existingEntity.setId(UUID.fromString(customerId));
         existingEntity.setName(testCustomer.getName());
         existingEntity.setGender(testCustomer.getGender().toString());
         existingEntity.setIdentification(testCustomer.getIdentification());
@@ -179,7 +179,7 @@ class CustomerPersistenceAdapterTest {
         existingEntity.setState(testCustomer.getState());
 
         CustomerEntity savedEntity = new CustomerEntity();
-        savedEntity.setId(customerId);
+        savedEntity.setId(UUID.fromString(customerId));
         savedEntity.setName(updatedCustomer.getName());
         savedEntity.setGender(updatedCustomer.getGender().toString());
         savedEntity.setIdentification(updatedCustomer.getIdentification());
@@ -188,7 +188,7 @@ class CustomerPersistenceAdapterTest {
         savedEntity.setPassword(updatedCustomer.getPassword());
         savedEntity.setState(updatedCustomer.getState());
 
-        when(customerJpaRepository.findById(customerId)).thenReturn(Optional.of(existingEntity));
+        when(customerJpaRepository.findById(testCustomer.getPersonId())).thenReturn(Optional.of(existingEntity));
         when(customerJpaRepository.save(any(CustomerEntity.class))).thenReturn(savedEntity);
         when(customerPersistenceMapper.toDomain(savedEntity)).thenReturn(updatedCustomer);
 
@@ -196,7 +196,7 @@ class CustomerPersistenceAdapterTest {
                 .expectNext(updatedCustomer)
                 .verifyComplete();
 
-        verify(customerJpaRepository, times(1)).findById(customerId);
+        verify(customerJpaRepository, times(1)).findById(testCustomer.getPersonId());
         verify(customerJpaRepository, times(1)).save(any(CustomerEntity.class));
         verify(customerPersistenceMapper, times(1)).toDomain(savedEntity);
     }

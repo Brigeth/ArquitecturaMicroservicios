@@ -47,10 +47,8 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        // When
         assertDoesNotThrow(customer::normalizeAndValidate);
 
-        // Then
         assertEquals("Juan Perez", customer.getName());
         assertEquals("1234567890", customer.getIdentification());
         assertEquals("Calle Principal 123", customer.getAddress());
@@ -103,7 +101,7 @@ class CustomerTest {
                 .identification("1234567890")
                 .address("Calle Principal 123")
                 .phone("0987654321")
-                .password("securepass123")  // Sin mayúsculas
+                .password("securepass123")
                 .state(true)
                 .build();
 
@@ -121,7 +119,7 @@ class CustomerTest {
                 .identification("1234567890")
                 .address("Calle Principal 123")
                 .phone("0987654321")
-                .password("SECUREPASS123")  // Sin minúsculas
+                .password("SECUREPASS123")
                 .state(true)
                 .build();
 
@@ -139,7 +137,7 @@ class CustomerTest {
                 .identification("1234567890")
                 .address("Calle Principal 123")
                 .phone("0987654321")
-                .password("SecurePassword")  // Sin números
+                .password("SecurePassword")
                 .state(true)
                 .build();
 
@@ -277,7 +275,7 @@ class CustomerTest {
     void shouldValidateAllFieldsFromPerson() {
 
         Customer customer = Customer.builder()
-                .name("J")  // Nombre inválido
+                .name("J")
                 .gender(GenderType.M)
                 .identification("1234567890")
                 .address("Calle Principal 123")

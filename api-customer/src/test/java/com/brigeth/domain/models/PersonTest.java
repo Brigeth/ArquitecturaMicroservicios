@@ -44,10 +44,8 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When
         person.normalizeAndValidate();
 
-        // Then
         assertEquals("Juan Perez Lopez", person.getName());
     }
 
@@ -63,10 +61,8 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When
         person.normalizeAndValidate();
 
-        // Then
         assertEquals("1234567890", person.getIdentification());
     }
 
@@ -81,10 +77,8 @@ class PersonTest {
                 .phone(" 098-765-4321 ")
                 .build();
 
-        // When
         person.normalizeAndValidate();
 
-        // Then
         assertEquals("0987654321", person.getPhone());
     }
 
@@ -99,10 +93,8 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When
         person.normalizeAndValidate();
 
-        // Then
         assertEquals("Calle Principal 123", person.getAddress());
     }
 
@@ -227,7 +219,7 @@ class PersonTest {
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
-                .identification("123456789")  // Solo 9 dígitos
+                .identification("123456789")
                 .address("Calle Principal 123")
                 .phone("0987654321")
                 .build();
@@ -313,7 +305,7 @@ class PersonTest {
                 .gender(GenderType.M)
                 .identification("1234567890")
                 .address("Calle Principal 123")
-                .phone("098765432")  // Solo 9 dígitos
+                .phone("098765432")
                 .build();
 
         ValidationException exception = assertThrows(ValidationException.class,
@@ -348,7 +340,6 @@ class PersonTest {
                 .phone("0912345678")
                 .build();
 
-        // Then
         assertEquals("Maria Lopez", person.getName());
         assertEquals(GenderType.F, person.getGender());
         assertDoesNotThrow(person::validate);
@@ -365,10 +356,8 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When
         person.normalizeAndValidate();
 
-        // Then
         assertEquals("Juan Carlos Perez", person.getName());
     }
 
@@ -383,10 +372,8 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        // When
         person.normalizeAndValidate();
 
-        // Then
         assertEquals("Juan Perez", person.getName());
     }
 
@@ -396,7 +383,7 @@ class PersonTest {
         Person person = Person.builder()
                 .name("Juan Perez")
                 .gender(GenderType.M)
-                .identification("0123456789")  // Exactamente 10 dígitos
+                .identification("0123456789")
                 .address("Calle Principal 123")
                 .phone("0987654321")
                 .build();

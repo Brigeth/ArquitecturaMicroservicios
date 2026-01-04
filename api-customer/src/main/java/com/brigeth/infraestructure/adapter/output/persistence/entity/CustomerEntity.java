@@ -8,12 +8,12 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "customers")
 public class CustomerEntity {
     @Id
-    @Column(name = "id", nullable = false, updatable = false)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
     private String name;
     private String gender;
     private String identification;
@@ -22,7 +22,4 @@ public class CustomerEntity {
     private String password;
     private Boolean state;
 
-    public CustomerEntity() {
-        this.id = UUID.randomUUID().toString();
-    }
 }

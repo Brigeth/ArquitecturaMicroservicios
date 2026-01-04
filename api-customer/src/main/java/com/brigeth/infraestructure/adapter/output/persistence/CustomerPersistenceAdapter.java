@@ -13,6 +13,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 
+import java.util.UUID;
+
 @Slf4j
 @Repository
 @RequiredArgsConstructor
@@ -34,7 +36,7 @@ public class CustomerPersistenceAdapter implements CustomerPersistencePort {
     public Mono<Customer> getCustomerById(String customerId) {
         log.debug("Querying database for client: {}", customerId);
         return Mono.fromCallable(() -> {
-            CustomerEntity customerEntity = customerJpaRepository.findById(customerId)
+            CustomerEntity customerEntity = customerJpaRepository.findById(UUID.fromString(customerId))
                     .orElseThrow(() -> {
                         log.warn("Client not found in database: {}", customerId);
                         return new CustomerNotFoundException(customerId);
@@ -59,7 +61,7 @@ public class CustomerPersistenceAdapter implements CustomerPersistencePort {
     @Override
     public Mono<Void> deleteCustomer(String customerId) {
         return Mono.fromCallable(() -> {
-                    customerJpaRepository.deleteById(customerId);
+                    customerJpaRepository.deleteById(UUID.fromString(customerId));
                     return Void.TYPE;
                 }).then().subscribeOn(Schedulers.boundedElastic());
     }
@@ -67,7 +69,7 @@ public class CustomerPersistenceAdapter implements CustomerPersistencePort {
     @Override
     public Mono<Customer> updateCustomer(Customer customer) {
         return Mono.fromCallable(() -> {
-            CustomerEntity existingEntity = customerJpaRepository.findById(customer.getPersonId().toString())
+            CustomerEntity existingEntity = customerJpaRepository.findById(customer.getPersonId())
                     .orElseThrow(() -> new CustomerNotFoundException(customer.getPersonId().toString()));
                     existingEntity.setName(customer.getName());
                     existingEntity.setGender(customer.getGender().toString());
