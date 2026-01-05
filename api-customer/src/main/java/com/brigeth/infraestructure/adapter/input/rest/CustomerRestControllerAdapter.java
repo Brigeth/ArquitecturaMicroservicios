@@ -29,36 +29,36 @@ public class CustomerRestControllerAdapter implements CustomersApi {
     public Mono<ResponseEntity<CustomerResponse>> createCustomers(
             Mono<CreateCustomerRequest> createCustomerRequest, 
             ServerWebExchange exchange) {
-        log.info("[REST] Solicitud para crear nuevo cliente");
+        log.info("[REST] Request to create new customer");
         
         return createCustomerRequest
                 .map(customerRestMapper::toDomain)
                 .flatMap(customerService::createCustomer)
                 .map(customerRestMapper::toResponse)
                 .map(response -> ResponseEntity.status(HttpStatus.CREATED).body(response))
-                .doOnSuccess(r -> log.info("[REST] Cliente creado exitosamente: {}", r.getBody().getCustomerId()))
-                .doOnError(e -> log.error("[REST] Error al crear cliente: {}", e.getMessage()));
+                .doOnSuccess(r -> log.info("[REST] Customer created successfully: {}", r.getBody().getCustomerId()))
+                .doOnError(e -> log.error("[REST] Error creating customer: {}", e.getMessage()));
     }
 
     @Override
     public Mono<ResponseEntity<Void>> deleteCustomer(
             UUID customerId, 
             ServerWebExchange exchange) {
-        log.info("[REST] Solicitud para eliminar cliente: {}", customerId);
+        log.info("[REST] Request to delete customer: {}", customerId);
         
         return customerService.deleteCustomer(customerId.toString())
                 .then(Mono.just(ResponseEntity.noContent().<Void>build()))
-                .doOnSuccess(v -> log.info("[REST] Cliente eliminado exitosamente: {}", customerId))
-                .doOnError(e -> log.error("[REST] Error al eliminar cliente: {}", e.getMessage()));
+                .doOnSuccess(v -> log.info("[REST] Customer deleted successfully: {}", customerId))
+                .doOnError(e -> log.error("[REST] Error deleting customer: {}", e.getMessage()));
     }
 
     @Override
     public Mono<ResponseEntity<Flux<CustomerResponse>>> getAllCustomer(ServerWebExchange exchange) {
-        log.info("[REST] Solicitud para obtener todos los clientes");
+        log.info("[REST] Request to get all customers");
         
         Flux<CustomerResponse> customerResponse = customerService.getCustomers()
                 .map(customerRestMapper::toResponse)
-                .doOnComplete(() -> log.info("[REST] Lista de clientes recuperada exitosamente"));
+                .doOnComplete(() -> log.info("[REST] Customer list retrieved successfully"));
         
         return Mono.just(ResponseEntity.ok(customerResponse));
     }
@@ -67,13 +67,13 @@ public class CustomerRestControllerAdapter implements CustomersApi {
     public Mono<ResponseEntity<CustomerResponse>> getCustomerById(
             UUID customerId, 
             ServerWebExchange exchange) {
-        log.info("[REST] Request to find a client: {}", customerId);
+        log.info("[REST] Request to find customer by ID: {}", customerId);
         
         return customerService.getOnlyCustomerById(customerId.toString())
                 .map(customerRestMapper::toResponse)
                 .map(ResponseEntity::ok)
                 .doOnSuccess(r -> log.info("[REST] Customer found: {}", customerId))
-                .doOnError(e -> log.error("[REST] Error searching for client: {}", e.getMessage()));
+                .doOnError(e -> log.error("[REST] Error searching for customer: {}", e.getMessage()));
     }
 
     @Override
@@ -81,7 +81,7 @@ public class CustomerRestControllerAdapter implements CustomersApi {
             UUID customerId, 
             Mono<UpdateCustomerRequest> updateCustomerRequest, 
             ServerWebExchange exchange) {
-        log.info("[REST] Request to update client: {}", customerId);
+        log.info("[REST] Request to update customer: {}", customerId);
         
         return updateCustomerRequest
                 .map(customerRestMapper::toUpdateDomain)
@@ -91,7 +91,7 @@ public class CustomerRestControllerAdapter implements CustomersApi {
                 })
                 .map(customerRestMapper::toResponse)
                 .map(ResponseEntity::ok)
-                .doOnSuccess(r -> log.info("[REST] Client successfully updated: {}", customerId))
-                .doOnError(e -> log.error("[REST] Error updating client: {}", e.getMessage()));
+                .doOnSuccess(r -> log.info("[REST] Customer updated successfully: {}", customerId))
+                .doOnError(e -> log.error("[REST] Error updating customer: {}", e.getMessage()));
     }
 }

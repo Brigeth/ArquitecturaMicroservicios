@@ -67,6 +67,12 @@ public class AccountPersistenceAdapter implements AccountPersistencePort {
     public Mono<Account> updateAccount(Account account) {
         return Mono.fromCallable(() -> {
                     AccountEntity entity = accountMapper.toEntity(account);
+                    
+                    // Establish a bidirectional relationship with movements
+                    if (entity.getMovementEntityList() != null) {
+                        entity.getMovementEntityList().forEach(movement -> movement.setAccount(entity));
+                    }
+                    
                     return accountJpaRepository.save(entity);
                 })
                 .subscribeOn(Schedulers.boundedElastic())

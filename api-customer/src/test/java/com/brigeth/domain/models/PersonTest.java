@@ -1,19 +1,32 @@
 package com.brigeth.domain.models;
 
 import com.brigeth.domain.enums.GenderType;
-import com.brigeth.domain.exception.ValidationException;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
+import jakarta.validation.ValidatorFactory;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.util.Set;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Person - Unit Tests")
 class PersonTest {
+
+    private static Validator validator;
+
+    @BeforeAll
+    static void setUp() {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        validator = factory.getValidator();
+    }
 
     @Test
     @DisplayName("Should create a valid person")
@@ -44,7 +57,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        person.normalizeAndValidate();
+        person.normalize();
 
         assertEquals("Juan Perez Lopez", person.getName());
     }
@@ -61,7 +74,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        person.normalizeAndValidate();
+        person.normalize();
 
         assertEquals("1234567890", person.getIdentification());
     }
@@ -77,7 +90,7 @@ class PersonTest {
                 .phone(" 098-765-4321 ")
                 .build();
 
-        person.normalizeAndValidate();
+        person.normalize();
 
         assertEquals("0987654321", person.getPhone());
     }
@@ -93,7 +106,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        person.normalizeAndValidate();
+        person.normalize();
 
         assertEquals("Calle Principal 123", person.getAddress());
     }
@@ -111,9 +124,10 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class,
-                person::validate);
-        assertEquals("Name is required", exception.getMessage());
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().equals("Name is required")));
     }
 
     @Test
@@ -127,9 +141,10 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class,
-                person::validate);
-        assertEquals("The name must contain at least a first and last name.", exception.getMessage());
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().contains("first and last name")));
     }
 
     @Test
@@ -143,9 +158,10 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class,
-                person::validate);
-        assertEquals("The name can only contain letters and spaces.", exception.getMessage());
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().contains("letters and spaces")));
     }
 
     @Test
@@ -159,7 +175,8 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        assertDoesNotThrow(person::validate);
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertTrue(violations.isEmpty());
         assertEquals("José María Peña", person.getName());
     }
 
@@ -174,9 +191,10 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class,
-                person::validate);
-        assertEquals("Gender is required", exception.getMessage());
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().equals("Gender is required")));
     }
 
     @ParameterizedTest
@@ -192,9 +210,10 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class,
-                person::validate);
-        assertEquals("Identification is mandatory", exception.getMessage());
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().equals("Identification is mandatory")));
     }
 
     @Test
@@ -208,9 +227,10 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class,
-                person::validate);
-        assertEquals("The identification must contain only numbers.", exception.getMessage());
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().contains("10 digits")));
     }
 
     @Test
@@ -224,9 +244,10 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class,
-                person::validate);
-        assertEquals("The identification must have 10 digits.", exception.getMessage());
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().contains("10 digits")));
     }
 
     @ParameterizedTest
@@ -242,9 +263,10 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class,
-                person::validate);
-        assertEquals("The address is required", exception.getMessage());
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().equals("The address is required")));
     }
 
     @Test
@@ -258,9 +280,10 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class,
-                person::validate);
-        assertEquals("The address must be at least 5 characters long", exception.getMessage());
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().contains("at least 5 characters")));
     }
 
     @ParameterizedTest
@@ -276,9 +299,10 @@ class PersonTest {
                 .phone(phone)
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class,
-                person::validate);
-        assertEquals("The phone is required", exception.getMessage());
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().equals("The phone is required")));
     }
 
     @Test
@@ -292,9 +316,10 @@ class PersonTest {
                 .phone("098ABC4321")
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class,
-                person::validate);
-        assertEquals("The phone number should only contain numbers.", exception.getMessage());
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().contains("10 digits")));
     }
 
     @Test
@@ -308,9 +333,10 @@ class PersonTest {
                 .phone("098765432")
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class,
-                person::validate);
-        assertEquals("The phone number must have 10 digits.", exception.getMessage());
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().contains("10 digits")));
     }
 
     @Test
@@ -325,7 +351,8 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        assertDoesNotThrow(person::validate);
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertTrue(violations.isEmpty());
     }
 
     @Test
@@ -342,7 +369,9 @@ class PersonTest {
 
         assertEquals("Maria Lopez", person.getName());
         assertEquals(GenderType.F, person.getGender());
-        assertDoesNotThrow(person::validate);
+        
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertTrue(violations.isEmpty());
     }
 
     @Test
@@ -356,7 +385,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        person.normalizeAndValidate();
+        person.normalize();
 
         assertEquals("Juan Carlos Perez", person.getName());
     }
@@ -372,7 +401,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        person.normalizeAndValidate();
+        person.normalize();
 
         assertEquals("Juan Perez", person.getName());
     }
@@ -388,7 +417,8 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        assertDoesNotThrow(person::validate);
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertTrue(violations.isEmpty());
         assertEquals("0123456789", person.getIdentification());
     }
 
@@ -403,6 +433,7 @@ class PersonTest {
                 .phone("0987654321")
                 .build();
 
-        assertDoesNotThrow(person::validate);
+        Set<ConstraintViolation<Person>> violations = validator.validate(person);
+        assertTrue(violations.isEmpty());
     }
 }

@@ -1,7 +1,10 @@
 package com.brigeth.domain.models;
 
 import com.brigeth.domain.enums.GenderType;
-import com.brigeth.domain.exception.ValidationException;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,101 +20,41 @@ import java.util.UUID;
 @AllArgsConstructor
 public class Person {
     private UUID personId;
+    
+    @NotBlank(message = "Name is required")
+    @Pattern(regexp = "^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$", message = "The name can only contain letters and spaces")
+    @Size(min = 5, max = 100, message = "The name must contain at least a first and last name")
     private String name;
+    
+    @NotNull(message = "Gender is required")
     private GenderType gender;
+    
+    @NotBlank(message = "Identification is mandatory")
+    @Pattern(regexp = "^\\d{10}$", message = "The identification must have 10 digits")
     private String identification;
+    
+    @NotBlank(message = "The address is required")
+    @Size(min = 5, message = "The address must be at least 5 characters long")
     private String address;
+    
+    @NotBlank(message = "The phone is required")
+    @Pattern(regexp = "^\\d{10}$", message = "The phone number must have 10 digits")
     private String phone;
 
-    public void normalizeAndValidate() {
+    public void normalize() {
         this.name = normalizeName(this.name);
         this.identification = normalizeIdentification(this.identification);
         this.phone = normalizePhone(this.phone);
         this.address = normalizeAddress(this.address);
-        validate();
-    }
-
-    public void validate() {
-        validateName(this.name);
-        validateGender(this.gender);
-        validateIdentification(this.identification);
-        validateAddress(this.address);
-        validatePhone(this.phone);
-    }
-
-    private void validateName(String name) {
-        if (name == null || name.isBlank()) {
-            throw new ValidationException("Name is required");
-        }
-
-        String normalized = name.trim().replaceAll("\\s+", " ");
-
-        String[] parts = normalized.split(" ");
-        if (parts.length < 2) {
-            throw new ValidationException("The name must contain at least a first and last name.");
-        }
-
-        if (!normalized.matches("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$")) {
-            throw new ValidationException("The name can only contain letters and spaces.");
-        }
-    }
-
-    private void validateGender(GenderType gender) {
-        if (gender == null) {
-            throw new ValidationException("Gender is required");
-        }
-    }
-
-    private void validateIdentification(String identification) {
-        if (identification == null || identification.isBlank()) {
-            throw new ValidationException("Identification is mandatory");
-        }
-
-        String normalized = identification.trim();
-
-        if (!normalized.matches("^\\d+$")) {
-            throw new ValidationException("The identification must contain only numbers.");
-        }
-
-        if (normalized.length() != 10) {
-            throw new ValidationException("The identification must have 10 digits.");
-        }
-    }
-
-    private void validateAddress(String address) {
-        if (address == null || address.isBlank()) {
-            throw new ValidationException("The address is required");
-        }
-
-        if (address.trim().length() < 5) {
-            throw new ValidationException("The address must be at least 5 characters long");
-        }
-    }
-
-    private void validatePhone(String phone) {
-        if (phone == null || phone.isBlank()) {
-            throw new ValidationException("The phone is required");
-        }
-
-        String normalized = phone.trim().replaceAll("[\\s-]", "");
-
-        if (!normalized.matches("^\\d+$")) {
-            throw new ValidationException("The phone number should only contain numbers.");
-        }
-
-        // Debe tener exactamente 10 dígitos
-        if (normalized.length() != 10) {
-            throw new ValidationException("The phone number must have 10 digits.");
-        }
     }
 
     protected String normalizeName(String name) {
         if (name == null) return null;
         
-        // Eliminar espacios múltiples y normalizar
+        // Remove multiple spaces and normalize
         String normalized = name.trim().replaceAll("\\s+", " ");
         
-        // Capitalizar primera letra de cada palabra
+        // Convert the first letter of each word to a capital letter
         StringBuilder result = new StringBuilder();
         String[] words = normalized.split(" ");
         

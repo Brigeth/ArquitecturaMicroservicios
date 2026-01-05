@@ -1,19 +1,32 @@
 package com.brigeth.domain.models;
 
 import com.brigeth.domain.enums.GenderType;
-import com.brigeth.domain.exception.ValidationException;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
+import jakarta.validation.ValidatorFactory;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.util.Set;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Customer - Unit Tests")
 class CustomerTest {
+
+    private static Validator validator;
+
+    @BeforeAll
+    static void setUp() {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        validator = factory.getValidator();
+    }
 
     @Test
     @DisplayName("You must create a valid client")
@@ -47,7 +60,7 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        assertDoesNotThrow(customer::normalizeAndValidate);
+        customer.normalize();
 
         assertEquals("Juan Perez", customer.getName());
         assertEquals("1234567890", customer.getIdentification());
@@ -69,9 +82,10 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class, 
-                customer::normalizeAndValidate);
-        assertEquals("The password must be at least 8 characters long", exception.getMessage());
+        Set<ConstraintViolation<Customer>> violations = validator.validate(customer);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().contains("8 and 20 characters")));
     }
 
     @Test
@@ -87,9 +101,10 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class, 
-                customer::normalizeAndValidate);
-        assertEquals("The password cannot exceed 20 characters", exception.getMessage());
+        Set<ConstraintViolation<Customer>> violations = validator.validate(customer);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().contains("8 and 20 characters")));
     }
 
     @Test
@@ -105,9 +120,10 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class, 
-                customer::normalizeAndValidate);
-        assertEquals("The password must contain at least one uppercase letter", exception.getMessage());
+        Set<ConstraintViolation<Customer>> violations = validator.validate(customer);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().contains("uppercase")));
     }
 
     @Test
@@ -123,9 +139,10 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class, 
-                customer::normalizeAndValidate);
-        assertEquals("The password must contain at least one lowercase letter", exception.getMessage());
+        Set<ConstraintViolation<Customer>> violations = validator.validate(customer);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().contains("lowercase")));
     }
 
     @Test
@@ -141,9 +158,10 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class, 
-                customer::normalizeAndValidate);
-        assertEquals("The password must contain at least one number", exception.getMessage());
+        Set<ConstraintViolation<Customer>> violations = validator.validate(customer);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().contains("number")));
     }
 
     @ParameterizedTest
@@ -161,9 +179,10 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class, 
-                customer::normalizeAndValidate);
-        assertEquals("A password is required.", exception.getMessage());
+        Set<ConstraintViolation<Customer>> violations = validator.validate(customer);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().equals("A password is required")));
     }
 
     @Test
@@ -179,9 +198,10 @@ class CustomerTest {
                 .state(null)
                 .build();
 
-        ValidationException exception = assertThrows(ValidationException.class, 
-                customer::normalizeAndValidate);
-        assertEquals("The state is mandatory", exception.getMessage());
+        Set<ConstraintViolation<Customer>> violations = validator.validate(customer);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().equals("The state is mandatory")));
     }
 
     @Test
@@ -197,7 +217,8 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        assertDoesNotThrow(customer::validateCustomer);
+        Set<ConstraintViolation<Customer>> violations = validator.validate(customer);
+        assertTrue(violations.isEmpty());
         assertTrue(customer.getState());
     }
 
@@ -215,7 +236,8 @@ class CustomerTest {
                 .state(false)
                 .build();
 
-        assertDoesNotThrow(customer::validateCustomer);
+        Set<ConstraintViolation<Customer>> violations = validator.validate(customer);
+        assertTrue(violations.isEmpty());
         assertFalse(customer.getState());
     }
 
@@ -284,10 +306,10 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-
-        ValidationException exception = assertThrows(ValidationException.class, 
-                customer::normalizeAndValidate);
-        assertEquals("The name must contain at least a first and last name.", exception.getMessage());
+        Set<ConstraintViolation<Customer>> violations = validator.validate(customer);
+        assertFalse(violations.isEmpty());
+        assertTrue(violations.stream()
+                .anyMatch(v -> v.getMessage().contains("first and last name")));
     }
 
     @Test
@@ -304,8 +326,8 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-
-        assertDoesNotThrow(customer::validateCustomer);
+        Set<ConstraintViolation<Customer>> violations = validator.validate(customer);
+        assertTrue(violations.isEmpty());
     }
 
     @Test
@@ -322,6 +344,7 @@ class CustomerTest {
                 .state(true)
                 .build();
 
-        assertDoesNotThrow(customer::validateCustomer);
+        Set<ConstraintViolation<Customer>> violations = validator.validate(customer);
+        assertTrue(violations.isEmpty());
     }
 }

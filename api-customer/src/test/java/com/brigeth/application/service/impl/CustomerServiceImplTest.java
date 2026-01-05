@@ -7,6 +7,8 @@ import com.brigeth.domain.exception.DuplicateIdentificationException;
 import com.brigeth.domain.exception.ValidationException;
 import com.brigeth.domain.models.Customer;
 import com.brigeth.domain.port.output.CustomerPersistencePort;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -18,6 +20,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
+import java.util.Collections;
+import java.util.Set;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -34,6 +38,9 @@ class CustomerServiceImplTest {
 
     @Mock
     private ValidationService validationService;
+    
+    @Mock
+    private Validator validator;
 
     @InjectMocks
     private CustomerServiceImpl customerService;
@@ -58,6 +65,8 @@ class CustomerServiceImplTest {
     @DisplayName("You must successfully create a customer")
     void shouldCreateCustomerSuccessfully() {
 
+        when(validator.validate(any(Customer.class)))
+                .thenReturn(Collections.emptySet());
         when(validationService.validateUniqueIdentification(anyString(), any()))
                 .thenReturn(Mono.empty());
         when(customerPersistencePort.saveCustomer(any(Customer.class)))
@@ -67,6 +76,7 @@ class CustomerServiceImplTest {
                 .expectNext(testCustomer)
                 .verifyComplete();
 
+        verify(validator, times(1)).validate(any(Customer.class));
         verify(validationService, times(1))
                 .validateUniqueIdentification(testCustomer.getIdentification(), null);
         verify(customerPersistencePort, times(1))
@@ -86,11 +96,21 @@ class CustomerServiceImplTest {
                 .password("SecurePass123")
                 .state(true)
                 .build();
+        
+        // Mock constraint violation
+        @SuppressWarnings("unchecked")
+        ConstraintViolation<Customer> violation = mock(ConstraintViolation.class);
+        when(violation.getMessage()).thenReturn("The name must contain at least a first and last name");
+        Set<ConstraintViolation<Customer>> violations = Set.of(violation);
+        
+        when(validator.validate(any(Customer.class)))
+                .thenReturn(violations);
 
         assertThrows(ValidationException.class, () -> {
             customerService.createCustomer(invalidCustomer);
         });
 
+        verify(validator, times(1)).validate(any(Customer.class));
         verify(validationService, never()).validateUniqueIdentification(anyString(), any());
         verify(customerPersistencePort, never()).saveCustomer(any(Customer.class));
     }
@@ -186,6 +206,8 @@ class CustomerServiceImplTest {
                 .address("Nueva Direccion 789")
                 .build();
 
+        when(validator.validate(any(Customer.class)))
+                .thenReturn(Collections.emptySet());
         when(validationService.validateCustomerExists(customerId))
                 .thenReturn(Mono.empty());
         when(validationService.validateUniqueIdentification(anyString(), anyString()))
@@ -197,6 +219,7 @@ class CustomerServiceImplTest {
                 .expectNext(updatedCustomer)
                 .verifyComplete();
 
+        verify(validator, times(1)).validate(any(Customer.class));
         verify(validationService, times(1)).validateCustomerExists(customerId);
         verify(validationService, times(1))
                 .validateUniqueIdentification(updatedCustomer.getIdentification(), customerId);

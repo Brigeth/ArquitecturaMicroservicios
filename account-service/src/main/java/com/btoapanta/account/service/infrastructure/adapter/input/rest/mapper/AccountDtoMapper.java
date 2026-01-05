@@ -18,7 +18,6 @@ public interface AccountDtoMapper {
     @Mapping(source = "initialBalance", target = "balance", qualifiedByName = "doubleToBigDecimal")
     @Mapping(source = "accountType", target = "accountType", qualifiedByName = "apiToDomainAccountType")
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "customerName", ignore = true)
     @Mapping(target = "movements", ignore = true)
     Account toDomain(AccountCreateRequest request);
 

@@ -1,7 +1,9 @@
 package com.brigeth.domain.models;
 
-
-import com.brigeth.domain.exception.ValidationException;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -11,51 +13,12 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Customer extends Person {
+    @NotBlank(message = "A password is required")
+    @Size(min = 8, max = 20, message = "Password must be between 8 and 20 characters")
+    @Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d).{8,20}$", 
+             message = "Password must contain at least one uppercase letter, one lowercase letter, and one number")
     private String password;
+    
+    @NotNull(message = "The state is mandatory")
     private Boolean state;
-
-
-    @Override
-    public void normalizeAndValidate() {
-        super.normalizeAndValidate();
-        validatePassword(this.password);
-        validateState(this.state);
-    }
-
-    public void validateCustomer() {
-        validatePassword(this.password);
-        validateState(this.state);
-    }
-
-    private void validatePassword(String password) {
-        if (password == null || password.isBlank()) {
-            throw new ValidationException("A password is required.");
-        }
-
-        if (password.length() < 8) {
-            throw new ValidationException("The password must be at least 8 characters long");
-        }
-
-        if (password.length() > 20) {
-            throw new ValidationException("The password cannot exceed 20 characters");
-        }
-
-        if (!password.matches(".*[A-Z].*")) {
-            throw new ValidationException("The password must contain at least one uppercase letter");
-        }
-
-        if (!password.matches(".*[a-z].*")) {
-            throw new ValidationException("The password must contain at least one lowercase letter");
-        }
-
-        if (!password.matches(".*\\d.*")) {
-            throw new ValidationException("The password must contain at least one number");
-        }
-    }
-
-    private void validateState(Boolean state) {
-        if (state == null) {
-            throw new ValidationException("The state is mandatory");
-        }
-    }
 }

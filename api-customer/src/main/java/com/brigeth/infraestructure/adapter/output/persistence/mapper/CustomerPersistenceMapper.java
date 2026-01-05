@@ -8,8 +8,6 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface CustomerPersistenceMapper {
-    // id is ignored because CustomerEntity auto-generates it in constructor
-    // For updates, the entity is fetched from DB and fields are set manually
     @Mapping(target = "id", ignore = true)
     CustomerEntity toEntity(Customer customer);
 

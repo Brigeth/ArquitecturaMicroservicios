@@ -163,7 +163,7 @@ paths:
               UpdateAccountType:
                 summary: ⁽ᴱᴺ⁾ Update account type. ⁽ᴱˢ⁾ Actualizar tipo de cuenta.
                 value:
-                  accountType: "CORRIENTE"
+                  accountType: "CURRENT"
               DeactivateAccount:
                 summary: ⁽ᴱᴺ⁾ Deactivate account. ⁽ᴱˢ⁾ Desactivar cuenta.
                 value:
@@ -330,14 +330,14 @@ components:
     AccountType:
       type: string
       description: ⁽ᴱᴺ⁾ Bank account type. ⁽ᴱˢ⁾ Tipo de cuenta bancaria.
-      enum: [AHORRO, CORRIENTE]
-      example: "AHORRO"
+      enum: [SAVINGS, CURRENT]
+      example: "SAVINGS"
 
     MovementType:
       type: string
       description: ⁽ᴱᴺ⁾ Transaction type (Credit/Debit). ⁽ᴱˢ⁾ Tipo de transacción (Crédito/Débito).
-      enum: [DEBITO, CREDITO]
-      example: "CREDITO"
+      enum: [CREDIT, DEBIT]
+      example: "CREDIT"
 
     Money:
       type: number
@@ -497,7 +497,7 @@ components:
       value:
         - id: "a1b2c3d4-e5f6-4789-a012-3456789abcde"
           accountNumber: 76828
-          accountType: "AHORRO"
+          accountType: "SAVINGS"
           balance: 200.00
           state: true
           customerId: "550e8400-e29b-41d4-a716-446655440000"
@@ -505,27 +505,27 @@ components:
 
     AccountCreateExample:
       value:
-        accountType: "AHORRO"
+        accountType: "SAVINGS"
         initialBalance: 200.00
         customerId: "550e8400-e29b-41d4-a716-446655440000"
 
     AccountCreateWithNumberExample:
       value:
         accountNumber: 478758
-        accountType: "CORRIENTE"
+        accountType: "CURRENT"
         initialBalance: 500.00
         customerId: "550e8400-e29b-41d4-a716-446655440000"
 
     AccountUpdateExample:
       value:
-        accountType: "CORRIENTE"
+        accountType: "CURRENT"
         state: false
 
     MovementsExample:
       value:
         - movementId: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
           date: "2025-11-06T10:30:00.000Z"
-          movementType: "CREDITO"
+          movementType: "CREDIT"
           amount: 100.00
           balanceBefore: 200.00
           balanceAfter: 300.00
@@ -534,11 +534,11 @@ components:
     CreateCreditMovementExample:
       value:
         accountNumber: 478758
-        movementType: "CREDITO"
+        movementType: "CREDIT"
         amount: 200.00
 
     CreateDebitMovementExample:
       value:
         accountNumber: 478758
-        movementType: "DEBITO"
+        movementType: "DEBIT"
         amount: 100.00

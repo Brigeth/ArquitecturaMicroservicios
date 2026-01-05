@@ -7,6 +7,7 @@ import com.btoapanta.account.service.domain.exception.InvalidAccountStateExcepti
 import com.btoapanta.account.service.domain.model.Account;
 import com.btoapanta.account.service.application.port.input.AccountInputPort;
 import com.btoapanta.account.service.application.port.output.AccountPersistencePort;
+import com.btoapanta.account.service.infrastructure.adapter.ouput.rest.CustomerRestClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -22,12 +23,19 @@ import java.util.UUID;
 public class AccountUseCase implements AccountInputPort {
 
     private final AccountPersistencePort accountPersistencePort;
+    private final CustomerRestClient customerRestClient;
 
     @Override
     public Mono<Account> createAccount(Account account) {
         log.info("Creating account for customer: {}", account.getCustomerId());
 
-        return validateAccountCreation(account)
+        // Validate that the client exists in api-customer
+        return customerRestClient.getCustomerById(account.getCustomerId())
+                .flatMap(customerResponse -> {
+                    // Use the customerName obtained from api-customer
+                    account.setCustomerName(customerResponse.getName());
+                    return validateAccountCreation(account);
+                })
                 .then(accountPersistencePort.saveAccount(account))
                 .doOnSuccess(created -> log.info("Account created successfully with number: {}", created.getAccountNumber()))
                 .doOnError(error -> log.error("Error creating account: {}", error.getMessage()));

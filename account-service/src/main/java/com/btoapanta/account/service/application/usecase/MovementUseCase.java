@@ -82,8 +82,8 @@ public class MovementUseCase implements MovementInputPort {
     private Mono<Movement> processMovement(Account account, Movement movementRequest) {
         return Mono.fromCallable(() -> {
                     return switch (movementRequest.getMovementType()) {
-                        case DEBITO -> account.debit(movementRequest.getAmount());
-                        case CREDITO -> account.credit(movementRequest.getAmount());
+                        case DEBIT -> account.debit(movementRequest.getAmount());
+                        case CREDIT -> account.credit(movementRequest.getAmount());
                     };
                 })
                 .flatMap(movement -> saveAccountAndMovement(account, movement));

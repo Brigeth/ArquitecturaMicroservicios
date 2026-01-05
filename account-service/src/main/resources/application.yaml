@@ -1,6 +1,3 @@
-server:
-  port: 8081
-
 spring:
   application:
     name: account-service
@@ -9,12 +6,6 @@ spring:
     url: jdbc:postgresql://localhost:5433/accountdb
     username: admin
     password: admin
-    driver-class-name: org.postgresql.Driver
-    hikari:
-      maximum-pool-size: 10
-      minimum-idle: 5
-      connection-timeout: 20000
-      idle-timeout: 300000
 
   jpa:
     hibernate:
@@ -41,6 +32,13 @@ spring:
     default-property-inclusion: non_null
     time-zone: UTC
     date-format: yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+server:
+  port: 1021
+
+# Integration with other microservices
+integration:
+  api-customer:
+    url: http://localhost:1020
 
 springdoc:
   api-docs:
