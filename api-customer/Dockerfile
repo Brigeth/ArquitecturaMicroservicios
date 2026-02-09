@@ -1,25 +1,25 @@
 # ========================================
-# Compilación (Builder)
+# Build Stage (Builder)
 # ========================================
 FROM gradle:8.5-jdk17-alpine AS builder
-# Directorio de trabajo
+# Working directory
 WORKDIR /app
-# Copia archivos de configuración de Gradle
+# Copy Gradle configuration files
 COPY build.gradle settings.gradle gradlew ./
 COPY gradle ./gradle
-# Copia el código fuente
+# Copy source code
 COPY src ./src
-# Compila la aplicación (sin daemon para ahorrar memoria)
+# Build the application (without daemon to save memory)
 RUN gradle build --no-daemon -x test
 # ========================================
-# Ejecución (Runtime)
+# Runtime Stage
 # ========================================
 FROM eclipse-temurin:17-jre-alpine
-# Directorio de trabajo
+# Working directory
 WORKDIR /app
-# Copia SOLO el jar compilado desde la etapa builder
+# Copy ONLY the compiled jar from builder stage
 COPY --from=builder /app/build/libs/api-customer.jar app.jar
-# Expone el puerto por defecto de Spring Boot
+# Expose Spring Boot default port
 EXPOSE 8080
-# Comando para ejecutar la aplicación
+# Command to run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]

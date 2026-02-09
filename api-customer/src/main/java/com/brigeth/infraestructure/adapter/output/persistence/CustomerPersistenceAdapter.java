@@ -72,7 +72,7 @@ public class CustomerPersistenceAdapter implements CustomerPersistencePort {
             CustomerEntity existingEntity = customerJpaRepository.findById(customer.getPersonId())
                     .orElseThrow(() -> new CustomerNotFoundException(customer.getPersonId().toString()));
                     
-                    // Solo actualiza los campos que vienen en la petición
+                    // Only update the fields that are included in the request.
                     if (customer.getName() != null) {
                         existingEntity.setName(customer.getName());
                     }
@@ -98,7 +98,6 @@ public class CustomerPersistenceAdapter implements CustomerPersistencePort {
                     CustomerEntity updatedEntity = customerJpaRepository.save(existingEntity);
                     return customerPersistenceMapper.toDomain(updatedEntity);
                 }
-        ).subscribeOn(Schedulers.boundedElastic()
-        );
+        ).subscribeOn(Schedulers.boundedElastic());
     }
 }

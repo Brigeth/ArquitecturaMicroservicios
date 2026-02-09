@@ -1,6 +1,6 @@
 services:
   # ========================================
-  # BASE DE DATOS - Customer Service
+  # DATABASE - Customer Service
   # ========================================
   customer-db:
     image: postgres:16-alpine
@@ -24,7 +24,7 @@ services:
     restart: unless-stopped
 
   # ========================================
-  # BASE DE DATOS - Account Service
+  # DATABASE - Account Service
   # ========================================
   account-db:
     image: postgres:16-alpine
@@ -48,7 +48,7 @@ services:
     restart: unless-stopped
 
   # ========================================
-  # MICROSERVICIO - API Customer
+  # MICROSERVICE - API Customer
   # ========================================
   api-customer:
     build:
@@ -71,7 +71,7 @@ services:
     restart: unless-stopped
 
   # ========================================
-  # MICROSERVICIO - Account Service
+  # MICROSERVICE - Account Service
   # ========================================
   account-service:
     build:
@@ -86,15 +86,18 @@ services:
       - SPRING_DATASOURCE_USERNAME=admin
       - SPRING_DATASOURCE_PASSWORD=admin
       - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+      - INTEGRATION_API-CUSTOMER_URL=http://api-customer:1020
     depends_on:
       account-db:
         condition: service_healthy
+      api-customer:
+        condition: service_started
     networks:
       - microservices-network
     restart: unless-stopped
 
 # ========================================
-# VOLÚMENES PERSISTENTES
+# PERSISTENT VOLUMES
 # ========================================
 volumes:
   customer_postgres_data:
@@ -103,7 +106,7 @@ volumes:
     driver: local
 
 # ========================================
-# RED COMPARTIDA
+# SHARED NETWORK
 # ========================================
 networks:
   microservices-network:
