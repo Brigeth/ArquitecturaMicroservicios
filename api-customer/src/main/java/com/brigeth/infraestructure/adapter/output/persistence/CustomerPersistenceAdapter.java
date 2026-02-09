@@ -71,13 +71,30 @@ public class CustomerPersistenceAdapter implements CustomerPersistencePort {
         return Mono.fromCallable(() -> {
             CustomerEntity existingEntity = customerJpaRepository.findById(customer.getPersonId())
                     .orElseThrow(() -> new CustomerNotFoundException(customer.getPersonId().toString()));
-                    existingEntity.setName(customer.getName());
-                    existingEntity.setGender(customer.getGender().toString());
-                    existingEntity.setIdentification(customer.getIdentification());
-                    existingEntity.setAddress(customer.getAddress());
-                    existingEntity.setPhone(customer.getPhone());
-                    existingEntity.setPassword(customer.getPassword());
-                    existingEntity.setState(customer.getState());
+                    
+                    // Solo actualiza los campos que vienen en la petición
+                    if (customer.getName() != null) {
+                        existingEntity.setName(customer.getName());
+                    }
+                    if (customer.getGender() != null) {
+                        existingEntity.setGender(customer.getGender().toString());
+                    }
+                    if (customer.getIdentification() != null) {
+                        existingEntity.setIdentification(customer.getIdentification());
+                    }
+                    if (customer.getAddress() != null) {
+                        existingEntity.setAddress(customer.getAddress());
+                    }
+                    if (customer.getPhone() != null) {
+                        existingEntity.setPhone(customer.getPhone());
+                    }
+                    if (customer.getPassword() != null) {
+                        existingEntity.setPassword(customer.getPassword());
+                    }
+                    if (customer.getState() != null) {
+                        existingEntity.setState(customer.getState());
+                    }
+                    
                     CustomerEntity updatedEntity = customerJpaRepository.save(existingEntity);
                     return customerPersistenceMapper.toDomain(updatedEntity);
                 }

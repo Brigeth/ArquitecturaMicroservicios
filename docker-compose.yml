@@ -1,7 +1,10 @@
 services:
-  postgres:
+  # ========================================
+  # BASE DE DATOS - Customer Service
+  # ========================================
+  customer-db:
     image: postgres:16-alpine
-    container_name: api-customer-db
+    container_name: customer-db
     environment:
       POSTGRES_DB: customerdb
       POSTGRES_USER: admin
@@ -10,9 +13,9 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - customer_postgres_data:/var/lib/postgresql/data
     networks:
-      - customer-network
+      - microservices-network
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U admin -d customerdb"]
       interval: 10s
@@ -20,10 +23,88 @@ services:
       retries: 5
     restart: unless-stopped
 
+  # ========================================
+  # BASE DE DATOS - Account Service
+  # ========================================
+  account-db:
+    image: postgres:16-alpine
+    container_name: account-db
+    environment:
+      POSTGRES_DB: accountdb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5433:5432"
+    volumes:
+      - account_postgres_data:/var/lib/postgresql/data
+    networks:
+      - microservices-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d accountdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # ========================================
+  # MICROSERVICIO - API Customer
+  # ========================================
+  api-customer:
+    build:
+      context: ./api-customer
+      dockerfile: Dockerfile
+    container_name: api-customer
+    ports:
+      - "1020:1020"
+    environment:
+      - SPRING_PROFILES_ACTIVE=local
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://customer-db:5432/customerdb
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+    depends_on:
+      customer-db:
+        condition: service_healthy
+    networks:
+      - microservices-network
+    restart: unless-stopped
+
+  # ========================================
+  # MICROSERVICIO - Account Service
+  # ========================================
+  account-service:
+    build:
+      context: ./account-service
+      dockerfile: Dockerfile
+    container_name: account-service
+    ports:
+      - "1021:1021"
+    environment:
+      - SPRING_PROFILES_ACTIVE=local
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://account-db:5432/accountdb
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+    depends_on:
+      account-db:
+        condition: service_healthy
+    networks:
+      - microservices-network
+    restart: unless-stopped
+
+# ========================================
+# VOLÚMENES PERSISTENTES
+# ========================================
 volumes:
-  postgres_data:
+  customer_postgres_data:
+    driver: local
+  account_postgres_data:
     driver: local
 
+# ========================================
+# RED COMPARTIDA
+# ========================================
 networks:
-  customer-network:
+  microservices-network:
     driver: bridge

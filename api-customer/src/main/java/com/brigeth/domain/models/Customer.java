@@ -19,6 +19,5 @@ public class Customer extends Person {
              message = "Password must contain at least one uppercase letter, one lowercase letter, and one number")
     private String password;
     
-    @NotNull(message = "The state is mandatory")
     private Boolean state;
 }
